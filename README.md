@@ -1,5 +1,5 @@
 # Doreen Wiggins
-I am a Jr. Developer who is passionate about writing clean, reusable code that improves the lives of the user!
+I am a Jr. Developer who is passionate about writing clean, reusable code that improves the user experience!
 
 ## About Me
 I completed the Full Stack Developer Bootcamp at UNH, and have a BA in Mathematics.  
@@ -22,5 +22,5 @@ Fast forward to my next job as a Jr. Data Engineer at Recordsforce where I was o
 - Azure for bug tracking
 
 ## Contact
-[LinkedIn](https://www.linkedin.com/doreen-m-wiggins)
-[GitHub](https://github.com/DMWIGGINS)
+[LinkedIn](https://www.linkedin.com/in/doreen-m-wiggins)
+
