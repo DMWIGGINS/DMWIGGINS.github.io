@@ -88,6 +88,9 @@ nav { grid-area: nav; }
  }
 
 .projectcard {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #536594;
   color: #232B3F;
   background-color:#e7e482;
   vertical-align: center;
@@ -130,8 +133,18 @@ display: block;
 
 
  img {
-  padding: 3em;
+ padding: 1em;
+ padding-top: 0;
 }  
+
+/* .cardfooter {
+  background-color: #232B3F;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+} */
 
 #contactme {
  position: relative;
@@ -199,6 +212,7 @@ nav ul {
 
 nav li {
   margin-right: 1em; 
+  isolation: isolate;
 
 }
 
@@ -252,7 +266,7 @@ hr.rounded {
 }
 
 
-h2 {
+.page-heading {
   color: white;
   font-size: 26px;
   isolation: isolate;
