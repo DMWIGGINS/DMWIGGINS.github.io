@@ -31,7 +31,7 @@ body {
                        "aboutme aboutme aboutme aboutme aboutme aboutme"
                        ". bio bio bio bio .";
                  
-  height: 100vh;
+  
   
 }
 
@@ -62,15 +62,15 @@ nav { grid-area: nav; }
 #project {
   display: grid;
   grid-template-rows: auto auto auto auto auto auto;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: minmax(28px, auto) 3fr 3fr 3fr 3fr 1fr;
   grid-template-areas: "nav nav nav nav nav nav"
                       "projectheading projectheading projectheading projectheading projectheading projectheading"
-                      ".  projectone projectone projectone projectone ."
-                      ".  projecttwo projecttwo projecttwo projecttwo ."
+                      ". projectone projectone projectone projectone ."
+                      ". projecttwo projecttwo projecttwo projecttwo ."
                       ". projectthree projectthree projectthree projectthree ."
-                      ".  projectfour projectfour projectfour projectfour .";
-  column-gap: 3em;
-  row-gap: 3em;
+                      ". projectfour projectfour projectfour projectfour .";
+  column-gap: 1em;
+  row-gap: 1em;
 
 }
 
@@ -81,70 +81,128 @@ nav { grid-area: nav; }
 #projectthree  { grid-area: projectthree; }
 #projectfour  { grid-area: projectfour; }
 
- .responsive {
-  width: 100%;
-  max-width: 300px; 
+
+#projectone, #projecttwo, #projectthree, #projectfour {
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: 1fr 3fr 3fr 1fr;
+  grid-template-areas: "title title title title"
+                        "screenshot  screenshot screenshot screenshot"
+                        ". description description ."
+                        "cardfooter cardfooter cardfooter cardfooter";
+                        
+  column-gap: 1em;
+  row-gap: 1em;
+                      
+
+}
+
+.title { grid-area: title; }
+.screenshot { grid-area: screenshot; }
+.description { grid-area: description; }
+.cardfooter { grid-area: cardfooter; }
+
+
+.title {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.screenshot {
+  width: 100%;  
   height: auto;
- }
+  border-width: 3px;
+  border-style: outset;
+  border-color: #232B3F;
+ 
+}
 
 .projectcard {
   border-width: 2px;
   border-style: solid;
   border-color: #536594;
-  color: #232B3F;
-  background-color:#e7e482;
+  color: white;
+  background-color: #232B3F;
   vertical-align: center;
   text-align: center;
   z-index: 999;
   margin-bottom: 25px;
+ 
+
+}
+.cardfooter {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "icon-live icon-live icon-code icon-code";
+  margin-bottom: 10px;
+                        
+}
+
+.icon-live { grid-area: icon-live; }
+.icon-code { grid-area: icon-code; }
+
+a {
+  text-decoration: none;
+}
+
+.live {
+  background-color: #e7e482;
+  font-size: 12px;
+  border-radius: 10%;
+  padding-bottom: 3px;
+  
+ 
+}
+
+.live:hover {
+  background-color: #232B3F;
+  border: 1px solid #e7e482;
+  color: white;
 
 }
 
-.projectcard > a > img.icon-default {
+
+.code {
+  background-color: #e7e482;
+  font-size: 12px;
+  border-radius: 10%;
+  
+
+}
+
+.code:hover {
+  background-color: #232B3F;
+  border: 1px solid #e7e482;
+  color: white;
+}
+
+
+
+
+.code > .icon-default {
   display: block;
+  padding-left: 20px;
+  
+  
 }
 
-.projectcard:hover > a > img.icon-default {
+.code:hover > .icon-default {
   display: none;
 }
 
-.projectcard > a > img.icon-hover {
+.code > .icon-hover {
   display: none
 }
 
-.projectcard:hover > a >  img.icon-hover {
+.code:hover > .icon-hover {
   display: block;
-}
-
-
-.icon-default {
-display: block;
-}
-
-.icon-hover {
-  display: none;
-}
-
-
-.projectcard:hover {
+  padding-left: 20px;
   color: white;
   background-color: #232B3F;
-}
+  
+} 
 
-
- img {
- padding: 1em;
- padding-top: 0;
-}  
-
-/* .cardfooter {
-  background-color: #232B3F;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: auto;
-} */
 
 #contactme {
  position: relative;
@@ -162,8 +220,6 @@ display: block;
   opacity: .4;
   background-repeat: no-repeat;
 } 
-
-
 
 #contactme {
   display: grid;
@@ -222,8 +278,6 @@ nav a {
   text-decoration: none;
   isolation: isolate;
 }
-
-
 
 .nav-toggle {
   position: absolute;
@@ -322,8 +376,6 @@ textarea {
   background-color: #536594;
   border-radius: 8px;
   outline: 1px solid ;
-  
-
 }
 
 ::placeholder {
@@ -365,6 +417,7 @@ textarea:focus {
   outline-style: solid;
   outline-color:#e7e482;
   outline-width: 2px;
+  padding-bottom: 10%;
 }
 
 @media screen and (min-width: 600px) {
@@ -373,7 +426,6 @@ textarea:focus {
  nav {
   font-size: 15px;
   display: block;
-  
 }
 
  nav ul {
@@ -382,8 +434,6 @@ textarea:focus {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  
-
 }
 
 nav li {
@@ -439,8 +489,7 @@ hr.rounded {
                       "projectheading projectheading projectheading projectheading projectheading projectheading"
                       ". projectone projectone projecttwo projecttwo ."
                       ". projectthree projectthree projectfour projectfour .";
-  column-gap: 3em;
-  row-gap: 3em;
+ 
 }
 }
 
@@ -450,7 +499,7 @@ hr.rounded {
 
    
   #contactme {
-    grid-template-rows: minmax(auto, 75px) minmax(auto, 60px) auto auto minmax(90px, auto);
+   grid-template-rows: minmax(auto, 75px) minmax(auto, 60px) auto auto minmax(90px, auto);
    grid-template-areas: "nav nav nav nav nav nav"
                        "contactheading contactheading contactheading contactheading contactheading contactheading"
                        ". connectinvite connectinvite connectinvite connectinvite ."
@@ -464,15 +513,15 @@ hr.rounded {
 
 @media only screen and (min-width:  992px) {
 
-   #project {
+  #project {
   display: grid;
   grid-template-rows: auto auto auto;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-areas: "nav nav nav nav nav nav"
                       "projectheading projectheading projectheading projectheading projectheading projectheading"
-                      " . projectone projecttwo projectthree projectfour . ";
-  column-gap: 3em;
-  row-gap: 3em;
+                      " . projectone projectone projecttwo projecttwo . "
+                      " . projectthree projectthree projectfour projectfour . ";
+  
   height: 100vh;
 }
 
@@ -505,6 +554,15 @@ hr.rounded {
                  
   }
 
+#project {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "nav nav nav nav nav nav"
+                      "projectheading projectheading projectheading projectheading projectheading projectheading"
+                      " . projectone projecttwo projectthree projectfour . ";
+}
+  
    #contactme {
   display: grid;
   grid-template-rows: minmax(auto, 75px) minmax(auto, 60px) auto minmax(90px, auto); 
