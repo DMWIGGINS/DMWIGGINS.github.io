@@ -10,7 +10,6 @@ body {
 #index {
   position: relative;
   background-color: #536594;
-  color: white;
 }
 
 #index::before {
@@ -23,13 +22,13 @@ body {
   opacity: .5;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height: 100%;
+
 } 
 
 #index {
   display: grid;
   grid-template-rows: minmax(auto, 160px) minmax(auto, 120px) auto;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr;
   grid-template-areas: "nav nav nav nav nav nav"
                        "aboutme aboutme aboutme aboutme aboutme aboutme"
                        ". bio bio bio bio .";
@@ -64,7 +63,7 @@ nav { grid-area: nav; }
 #project {
   display: grid;
   grid-template-rows: auto auto auto auto auto auto;
-  grid-template-columns: minmax(28px, auto) 3fr 3fr 3fr 3fr 1fr;
+  grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
   grid-template-areas: "nav nav nav nav nav nav"
                       "projectheading projectheading projectheading projectheading projectheading projectheading"
                       ". projectone projectone projectone projectone ."
@@ -86,7 +85,7 @@ nav { grid-area: nav; }
 
 #projectone, #projecttwo, #projectthree, #projectfour {
   display: grid;
-  grid-template-rows: auto auto auto auto;
+  grid-template-rows: minmax(70px, 53px) auto auto minmax(48px, auto);
   grid-template-columns: 1fr 3fr 3fr 1fr;
   grid-template-areas: "title title title title"
                         "screenshot screenshot screenshot screenshot"
@@ -249,13 +248,13 @@ a {
 #contactme {
   display: grid;
   grid-template-rows: auto auto auto auto auto;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
   grid-template-areas: "nav nav nav nav nav nav"
                        "contactheading contactheading contactheading contactheading contactheading contactheading"
                        ". connectinvite connectinvite connectinvite connectinvite ."
                        ". contactform contactform contactform contactform ."
                        "footer footer footer footer footer footer";
-  column-gap: 0;
+  column-gap: 1em;
   row-gap: 3em;
 }
 
@@ -552,32 +551,45 @@ hr.rounded {
   isolation: isolate; 
   display: block;
 }
-
-#project {
+  #project {
   display: grid;
-  grid-template-rows: auto auto auto auto;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
   grid-template-areas: "nav nav nav nav nav nav"
                       "projectheading projectheading projectheading projectheading projectheading projectheading"
-                      ". projectone projectone projecttwo projecttwo ."
-                      ". projectthree projectthree projectfour projectfour .";
- 
+                      " . projectone projectone projecttwo projecttwo . "
+                      " . projectthree projectthree projectfour projectfour . ";
+column-gap: 1em;
+                      
 }
+
 }
 
 
 @media only screen and (min-width: 768px) {
 
 
-   
+   #project {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
+  grid-template-areas: "nav nav nav nav nav nav"
+                      "projectheading projectheading projectheading projectheading projectheading projectheading"
+                      " . projectone projectone projecttwo projecttwo . "
+                      " . projectthree projectthree projectfour projectfour . ";
+column-gap: 3em;
+                      
+}
+
   #contactme {
    grid-template-rows: minmax(auto, 75px) minmax(auto, 60px) auto auto minmax(90px, auto);
+   grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
    grid-template-areas: "nav nav nav nav nav nav"
                        "contactheading contactheading contactheading contactheading contactheading contactheading"
                        ". connectinvite connectinvite connectinvite connectinvite ."
                        ". contactform contactform contactform contactform ."
                        "footer footer footer footer footer footer";
-  column-gap: 0;
+  column-gap: 3em;
   row-gap: 3em;
 
   }
@@ -588,19 +600,20 @@ hr.rounded {
   #project {
   display: grid;
   grid-template-rows: auto auto auto;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
   grid-template-areas: "nav nav nav nav nav nav"
                       "projectheading projectheading projectheading projectheading projectheading projectheading"
                       " . projectone projectone projecttwo projecttwo . "
                       " . projectthree projectthree projectfour projectfour . ";
-  
-  height: 100vh;
-}
+
+
+  column-gap: 3em;
+  } 
 
   #contactme {
   display: grid;
   grid-template-rows: minmax(auto, 75px) minmax(auto, 60px) auto minmax(90px, auto); 
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
   grid-template-areas: "nav nav nav nav nav nav"
                        "contactheading contactheading contactheading contactheading contactheading contactheading"
                        ". connectinvite connectinvite contactform contactform ."
@@ -618,27 +631,28 @@ hr.rounded {
 
   #index {
   display: grid;
-  grid-template-rows: minmax(auto, 160px) minmax(auto, 120px) auto;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr;
   grid-template-areas: "nav nav nav nav nav nav"
                        "aboutme aboutme aboutme aboutme aboutme aboutme"
                        ". . bio bio . .";
-                 
+  height: 100vh;       
   }
-
- #project {
+#project {
   display: grid;
   grid-template-rows: auto auto auto;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
   grid-template-areas: "nav nav nav nav nav nav"
                       "projectheading projectheading projectheading projectheading projectheading projectheading"
                       " . projectone projecttwo projectthree projectfour . ";
+  column-gap: 2em;
+  height: 100vh;
 }
-  
+
   #contactme {
   display: grid;
   grid-template-rows: minmax(auto, 75px) minmax(auto, 60px) auto minmax(90px, auto); 
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
   grid-template-areas: "nav nav nav nav nav nav"
                        "contactheading contactheading contactheading contactheading contactheading contactheading"
                        ". connectinvite connectinvite contactform contactform ."
