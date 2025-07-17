@@ -9,7 +9,9 @@ body {
 
 #index {
   position: relative;
+  min-height: 100vh;
   background-color: #536594;
+ 
 }
 
 #index::before {
@@ -22,18 +24,18 @@ body {
   opacity: .5;
   background-repeat: no-repeat;
   background-attachment: fixed;
+ 
 
 } 
 
 #index {
   display: grid;
-  grid-template-rows: minmax(auto, 160px) minmax(auto, 120px) auto;
+  grid-template-rows: minmax(auto, 160px) minmax(auto, 120px) min-content;
   grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr;
   grid-template-areas: "nav nav nav nav nav nav"
                        "aboutme aboutme aboutme aboutme aboutme aboutme"
-                       ". bio bio bio bio .";
-                 
-  
+                       ". bio bio bio bio ."
+                       
   
 }
 
@@ -46,6 +48,7 @@ nav { grid-area: nav; }
 
 #project {
   position: relative; 
+  min-height: 100vh;
   background-color: #0b81b6;
 } 
 
@@ -58,6 +61,8 @@ nav { grid-area: nav; }
   inset: 0;
   opacity: .7;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+ 
 }
 
 #project {
@@ -143,6 +148,7 @@ nav { grid-area: nav; }
 }
  
   .description {
+    /* text-align: justify; possibly for larger than 400 width*/
     text-align: left;
   }
 
@@ -230,8 +236,10 @@ a {
 
 #contactme {
  position: relative;
+ min-height: 100vh;
  background-color: #232B3F;
  color: #E0E0E0;
+ 
 }
 
 #contactme::before {
@@ -243,6 +251,9 @@ a {
   inset: 0;
   opacity: .4;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+ 
+ 
 } 
 
 #contactme {
@@ -256,6 +267,7 @@ a {
                        "footer footer footer footer footer footer";
   column-gap: 1em;
   row-gap: 3em;
+  
 }
 
 nav { grid-area: nav; }
@@ -377,7 +389,7 @@ hr.rounded {
   isolation: isolate;
   margin-bottom: 4em;
   font-size: 16px;
-  background: linear-gradient(135deg, #536594,#3e4a72, #232B3F, #61497e, #5c5376, #595e8c, #536594, #3e4a72,#232B3F, #61497e, #5c5376, #595e8c, #536594,#3e4a72, #232B3F, #61497e, #5c5376, #595e8c, #536594 );
+  background: linear-gradient(135deg, #536594,#3e4a72, #232B3F, #61497e, #5c5376, #595e8c, #536594, #3e4a72, #232B3F, #61497e, #5c5376, #595e8c, #536594,#3e4a72, #232B3F, #61497e, #5c5376, #595e8c, #536594 );
   background-size: 300% 300%;
   animation-name: mood;
   animation-duration: 10s;
@@ -403,6 +415,7 @@ hr.rounded {
   font-size: 18px;
   isolation: isolate;
   color: #E0E0E0;
+  /* text-align: justify; */
 
 }
 
@@ -551,6 +564,18 @@ hr.rounded {
   isolation: isolate; 
   display: block;
 }
+
+#index {
+  display: grid;
+  grid-template-rows: minmax(auto, 160px) minmax(auto, 120px) min-content;
+  grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr;
+  grid-template-areas: "nav nav nav nav nav nav"
+                       "aboutme aboutme aboutme aboutme aboutme aboutme"
+                       ". . bio bio . .";
+                  
+  
+  }
+
   #project {
   display: grid;
   grid-template-rows: auto auto auto;
@@ -568,8 +593,19 @@ column-gap: 1em;
 
 @media only screen and (min-width: 768px) {
 
+#index {
+  display: grid;
+  grid-template-rows: minmax(auto, 160px) minmax(auto, 120px) min-content;
+  grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr;
+  grid-template-areas: "nav nav nav nav nav nav"
+                       "aboutme aboutme aboutme aboutme aboutme aboutme"
+                       ". . bio bio . .";
+                     
+  /* height: 100vh; */
+  }
 
-   #project {
+
+  #project {
   display: grid;
   grid-template-rows: auto auto auto;
   grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
@@ -596,6 +632,17 @@ column-gap: 3em;
 }
 
 @media only screen and (min-width:  992px) {
+
+  #index {
+  display: grid;
+  grid-template-rows: minmax(auto, 160px) minmax(auto, 120px) min-content;
+  grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr;
+  grid-template-areas: "nav nav nav nav nav nav"
+                       "aboutme aboutme aboutme aboutme aboutme aboutme"
+                       ". . bio bio . .";
+                      
+    
+  }
 
   #project {
   display: grid;
@@ -631,13 +678,15 @@ column-gap: 3em;
 
   #index {
   display: grid;
-  grid-template-rows: auto auto auto auto auto;
+  grid-template-rows: minmax(auto, 160px) minmax(auto, 120px) min-content;
   grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr;
   grid-template-areas: "nav nav nav nav nav nav"
                        "aboutme aboutme aboutme aboutme aboutme aboutme"
                        ". . bio bio . .";
-  height: 100vh;       
+                      
+       
   }
+
 #project {
   display: grid;
   grid-template-rows: auto auto auto;
@@ -646,7 +695,7 @@ column-gap: 3em;
                       "projectheading projectheading projectheading projectheading projectheading projectheading"
                       " . projectone projecttwo projectthree projectfour . ";
   column-gap: 2em;
-  height: 100vh;
+  
 }
 
   #contactme {
@@ -659,7 +708,7 @@ column-gap: 3em;
                        "footer footer footer footer footer footer";
   column-gap: 3em;
   row-gap:3em;
-  height: 100vh;
+ 
 } 
 
   #submit {
