@@ -30,12 +30,13 @@ body {
 
 #index {
   display: grid;
-  grid-template-rows: minmax(auto, 160px) minmax(auto, 120px) min-content;
-  grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr;
+  grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) min-content;;
+  grid-template-columns: minmax(48.75px, auto) 1fr 3fr 3fr 1fr minmax(48.75px, auto);
   grid-template-areas: "nav nav nav nav nav nav"
                        "aboutme aboutme aboutme aboutme aboutme aboutme"
-                       ". bio bio bio bio ."
-                       
+                       ". bio bio bio bio .";
+  
+  row-gap: 3em;                     
   
 }
 
@@ -83,8 +84,8 @@ nav { grid-area: nav; }
 
 #project {
   display: grid;
-  grid-template-rows: auto auto auto auto auto auto;
-  grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
+  grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto;
+  grid-template-columns: minmax(48.75px, auto) 3fr 3fr 3fr 3fr minmax(48.75px, auto);
   grid-template-areas: "nav nav nav nav nav nav"
                       "projectheading projectheading projectheading projectheading projectheading projectheading"
                       ". projectone projectone projectone projectone ."
@@ -92,7 +93,7 @@ nav { grid-area: nav; }
                       ". projectthree projectthree projectthree projectthree ."
                       ". projectfour projectfour projectfour projectfour .";
   column-gap: 1em;
-  row-gap: 1em;
+  row-gap: 3em;
 
 }
 
@@ -114,8 +115,7 @@ nav { grid-area: nav; }
                         "cardfooter cardfooter cardfooter cardfooter";
                         
   column-gap: 1em;
-  row-gap: 1em;
-                      
+  row-gap: 1em;                     
 
 }
 
@@ -131,10 +131,6 @@ nav { grid-area: nav; }
   font-size: 22px;
   color: #c8d3db;
   margin-bottom: 0px;
-  
- 
-
-
 }
 
 .screenshot {
@@ -159,8 +155,8 @@ nav { grid-area: nav; }
   background-color: #232B3F;
   vertical-align: center;
   text-align: center;
-  z-index: 999;
   margin-bottom: 25px;
+  z-index: 100;
   position: relative;
  
 }
@@ -274,8 +270,8 @@ a {
 
 #contactme {
   display: grid;
-  grid-template-rows: auto auto auto auto auto;
-  grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
+  grid-template-rows: minmax(75px, 75px) minmax(75px, auto) min-content auto auto;
+  grid-template-columns: minmax(48.75px, auto) 3fr 3fr 3fr 3fr minmax(48.75px, auto);
   grid-template-areas: "nav nav nav nav nav nav"
                        "contactheading contactheading contactheading contactheading contactheading contactheading"
                        ". connectinvite connectinvite connectinvite connectinvite ."
@@ -318,21 +314,34 @@ nav { grid-area: nav; }
 
 
 nav {
-  font-size: 20px;
-  text-align: right;
-  display: none;
+  font-size: 18px;
+  text-align: right;  
+  
+  position: fixed;  
+  top: 0; 
+  right: -250px; 
+  width: 250px; 
+  background: #536594; 
+   transition: right 0.4s ease;  
+  padding: 60px 20px; 
+  z-index: 200; 
+  height: 100%; 
 }
 
 nav ul {
   list-style-type: none;
-  margin-top: 1em;
-  padding: 0;
+  margin-top: 2em;
+  padding: 0; 
   
 }
 
 nav li {
-  margin-right: 1em; 
-  isolation: isolate;
+   margin-right: 1em; 
+   isolation: isolate;
+   padding-top: 1em; 
+   padding-bottom: 1em; 
+   border-bottom: 1px solid #cccccc; 
+   text-align: center; 
 
 }
 
@@ -364,10 +373,6 @@ nav {
 }
 
 
-.nav-toggle:checked ~ nav {
-  display: block;
-   
-}
 
 .fa-bars {
   color: #E0E0E0;
@@ -375,11 +380,58 @@ nav {
   float: right;
   margin-top: 1em;
   margin-right: 1em;
-  font-size: 24px;
-  
+  margin-bottom: 3em;
+  height: 15px;
+  font-size: 26px;
+
 
 }
 
+
+
+ .fa-xmark {
+   position: fixed; 
+  color: #E0E0E0;
+  isolation: isolate;
+  float: right;
+  margin-top: 1em;
+  margin-right: 1em;
+  margin-bottom: 3em;
+  height: 15px;
+  font-size: 26px;
+   z-index: 300; 
+  display: none;
+  
+ }
+
+  .nav-toggle:checked ~ .nav-toggle-label .fa-bars {
+  display: none;
+ } 
+
+  .nav-toggle:checked ~ .nav-toggle-label .fa-xmark {
+  display: block;
+ } 
+
+
+  .nav-toggle:checked ~ #sidemenu {
+   right: 0;
+  } 
+
+  
+
+
+/* #topline, #middleline, #bottomline {
+  background-color: #E0E0E0;
+  isolation: isolate;
+  float: right;
+  margin-top: 4px;
+  margin-right: 1em;
+  height: 3px;
+  width: 30px;
+  display: block;
+  
+
+} */
 
 
 hr.rounded {
@@ -527,6 +579,11 @@ textarea:focus {
  nav {
   font-size: 15px;
   display: block;
+  position: static;
+  width: auto;
+  padding: 0;
+  background: transparent;
+  height: auto;
 }
 
  nav ul {
@@ -539,6 +596,8 @@ textarea:focus {
 
 nav li {
   float: left;
+  padding: 0;
+  border-bottom: 0px solid #cccccc; 
 }
 nav a {
 
@@ -584,7 +643,7 @@ hr.rounded {
 
 #index {
   display: grid;
-  grid-template-rows: minmax(auto, 160px) minmax(auto, 120px) min-content;
+  grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) min-content;
   grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr;
   grid-template-areas: "nav nav nav nav nav nav"
                        "aboutme aboutme aboutme aboutme aboutme aboutme"
@@ -595,7 +654,7 @@ hr.rounded {
 
   #project {
   display: grid;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto;
   grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
   grid-template-areas: "nav nav nav nav nav nav"
                       "projectheading projectheading projectheading projectheading projectheading projectheading"
@@ -613,20 +672,23 @@ column-gap: 1em;
 @media only screen and (min-width: 768px) {
 
 #index {
+  
   display: grid;
-  grid-template-rows: minmax(auto, 160px) minmax(auto, 120px) min-content;
+  grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) min-content;
   grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr;
   grid-template-areas: "nav nav nav nav nav nav"
                        "aboutme aboutme aboutme aboutme aboutme aboutme"
                        ". . bio bio . .";
-                     
-  /* height: 100vh; */
+row-gap:3em;
+column-gap: 3em;                     
+    
   }
+
 
 
   #project {
   display: grid;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto;
   grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
   grid-template-areas: "nav nav nav nav nav nav"
                       "projectheading projectheading projectheading projectheading projectheading projectheading"
@@ -654,18 +716,19 @@ column-gap: 3em;
 
   #index {
   display: grid;
-  grid-template-rows: minmax(auto, 160px) minmax(auto, 120px) min-content;
+  grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) min-content;
   grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr;
   grid-template-areas: "nav nav nav nav nav nav"
                        "aboutme aboutme aboutme aboutme aboutme aboutme"
                        ". . bio bio . .";
-                      
+row-gap:3em;
+column-gap: 3em;                     
     
   }
 
   #project {
   display: grid;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto;
   grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
   grid-template-areas: "nav nav nav nav nav nav"
                       "projectheading projectheading projectheading projectheading projectheading projectheading"
@@ -684,49 +747,42 @@ column-gap: 3em;
                        "contactheading contactheading contactheading contactheading contactheading contactheading"
                        ". connectinvite connectinvite contactform contactform ."
                        "footer footer footer footer footer footer";
-  column-gap: 3em;
-  row-gap:3em;
-}
-  #submit {
-    width: 50%;
+row-gap:3em;
+column-gap: 3em;
+   }
+ #submit {
+   width: 50%;
   }
 
 }
 
 @media only screen and (min-width:  1220px) {
 
-  #index {
-  display: grid;
-  grid-template-rows: minmax(auto, 160px) minmax(auto, 120px) min-content;
-  grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr;
-  grid-template-areas: "nav nav nav nav nav nav"
-                       "aboutme aboutme aboutme aboutme aboutme aboutme"
-                       ". . bio bio . .";
-                      
-       
-  }
+ 
 
 #project {
   display: grid;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto;
   grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
   grid-template-areas: "nav nav nav nav nav nav"
                       "projectheading projectheading projectheading projectheading projectheading projectheading"
                       " . projectone projecttwo projectthree projectfour . ";
-  column-gap: 2em;
+row-gap:3em;
+column-gap: 3em;
   
 }
 
   #contactme {
   display: grid;
-  grid-template-rows: minmax(auto, 75px) minmax(auto, 60px) auto minmax(90px, auto); 
+  grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto minmax(90px, auto); 
   grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
   grid-template-areas: "nav nav nav nav nav nav"
                        "contactheading contactheading contactheading contactheading contactheading contactheading"
                        ". connectinvite connectinvite contactform contactform ."
                        "footer footer footer footer footer footer";
-  column-gap: 3em;
-  row-gap:3em;
+ row-gap:3em;                    
+ column-gap: 3em;
+  
  
 } 
 
