@@ -171,7 +171,7 @@ nav { grid-area: nav; }
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-areas: "icon-live icon-live icon-code icon-code";
-  margin-bottom: 10px;
+  
                         
 }
 
@@ -186,7 +186,7 @@ a {
   background-color: #e7e482;
   font-size: 12px;
   border-radius: 10%;
-  padding-bottom: 3px;
+  padding-bottom: 5px;
   border: 1px solid #e7e482;
   color: black;
   
@@ -209,6 +209,8 @@ a {
   border-radius: 10%;
   border: 1px solid #e7e482;
   color: black;
+  height: 48px;
+  width: 88.34px;
   
 
 }
