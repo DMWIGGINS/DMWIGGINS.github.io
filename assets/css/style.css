@@ -48,9 +48,8 @@ nav { grid-area: nav; }
 #intro {
   font-style: italic;
   font-size: 20px;
-  
-
-}
+  color: #a4b6c3;
+} 
 .biophoto {
   float: left;
   clip-path: circle(50%);
@@ -189,6 +188,7 @@ a {
   border-radius: 10%;
   padding-bottom: 3px;
   border: 1px solid #e7e482;
+  color: black;
   
 }
 
@@ -208,6 +208,7 @@ a {
   font-size: 12px;
   border-radius: 10%;
   border: 1px solid #e7e482;
+  color: black;
   
 
 }
@@ -316,13 +317,12 @@ nav { grid-area: nav; }
 nav {
   font-size: 18px;
   text-align: right;  
-  
   position: fixed;  
   top: 0; 
   right: -250px; 
   width: 250px; 
   background: #536594; 
-   transition: right 0.4s ease;  
+  transition: right 0.4s ease;  
   padding: 60px 20px; 
   z-index: 200; 
   height: 100%; 
@@ -390,7 +390,7 @@ nav {
 
 
  .fa-xmark {
-   position: fixed; 
+  position: fixed; 
   color: #E0E0E0;
   isolation: isolate;
   float: right;
@@ -572,7 +572,15 @@ textarea:focus {
   padding-right: 1em;
   
 }
+@media screen and (max-width: 395px) {
+.biophoto {
+  margin: 0 1em auto;
+  shape-outside: none;
+  float: none;
+  
+}
 
+}
 @media screen and (min-width: 600px) {
  
 
