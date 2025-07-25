@@ -7,11 +7,7 @@ body {
   height: 100vh;
 }
 
-@supports (-webkit-touch-callout: none) {
-  #project::before {
-    background-attachment: scroll;
-  }
-}
+
 
 #index {
   position: relative;
@@ -86,6 +82,11 @@ nav { grid-area: nav; }
  
 }
 
+@supports (-webkit-touch-callout: none) {
+  #project::before {
+    background-attachment: scroll;
+  }
+}
 
 #project {
   display: grid;
