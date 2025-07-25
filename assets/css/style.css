@@ -7,6 +7,12 @@ body {
   height: 100vh;
 }
 
+@supports (-webkit-touch-callout: none) {
+  #project::before {
+    background-attachment: scroll;
+  }
+}
+
 #index {
   position: relative;
   min-height: 100vh;
