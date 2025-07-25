@@ -23,7 +23,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  opacity: .5;
+  opacity: .6;
   background-repeat: no-repeat;
   background-attachment: fixed;
  
@@ -82,11 +82,6 @@ nav { grid-area: nav; }
  
 }
 
-@supports (-webkit-touch-callout: none) {
-  #project::before {
-    background-attachment: scroll;
-  }
-}
 
 #project {
   display: grid;
@@ -272,7 +267,7 @@ a {
   content: "";
   position: absolute;
   inset: 0;
-  opacity: .4;
+  opacity: .6;
   background-repeat: no-repeat;
   background-attachment: fixed;
  
@@ -808,3 +803,22 @@ column-gap: 3em;
     width: 20%;
   }
 }
+
+@media screen and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  #project::before {
+    background-attachment: scroll !important; /* disable fixed on iOS */
+    background-position: center !important;   /* keep same alignment */
+    background-size: cover !important;        /* same scaling as other pages */
+  }
+}
+
+/* Disable background-attachment: fixed on iOS to prevent zoom issues
+@media screen and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  #index::before,
+  #project::before,
+  #contactme::before {
+    background-attachment: scroll !important; /* prevent iOS zoom bug */
+    /* background-position: center !important; 
+    background-size: cover !important;
+  }
+} */ 
