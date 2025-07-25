@@ -563,16 +563,16 @@ textarea:focus {
 }
 
 #footer {
+  display: flex;
   position: relative;
   background-color: #232B3F ;
   color: #E0E0E0;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
   outline-style: solid;
   outline-color:#e7e482;
   outline-width: 1px;
-  padding-bottom: 10%;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding: 2em;
   
 }
 @media screen and (max-width: 395px) {
