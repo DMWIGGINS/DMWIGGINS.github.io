@@ -185,10 +185,9 @@ a {
   background-color: #e7e482;
   font-size: 12px;
   border-radius: 10%;
-  /* padding-bottom: 6px; */
   border: 1px solid #e7e482;
   color: black;
-  height: 47px;
+  height: 49px;
   width: 89px;
   
 }
@@ -210,8 +209,9 @@ a {
   border-radius: 10%;
   border: 1px solid #e7e482;
   color: black;
-  height: 47px;
+  height: 49px;
   width: 89px;
+  
   
 
 }
@@ -226,7 +226,8 @@ a {
 
 .code > .icon-default {
   display: block;
-  padding-left: 24px;
+  padding-left: 25px;
+  
   
   
   
@@ -243,7 +244,7 @@ a {
 
 .code:hover > .icon-hover {
   display: block;
-  padding-left: 24px;
+  padding-left: 25px;
   color: white;
   background-color: #232B3F;
  
