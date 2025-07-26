@@ -8,7 +8,6 @@ body {
 }
 
 
-
 #index {
   position: relative;
   min-height: 100vh;
@@ -76,7 +75,7 @@ nav { grid-area: nav; }
   content: "";
   position: absolute;
   inset: 0;
-  opacity: .7;
+  opacity: .6;
   background-repeat: no-repeat;
   background-attachment: fixed;
  
@@ -421,22 +420,6 @@ nav {
   .nav-toggle:checked ~ #sidemenu {
    right: 0;
   } 
-
-  
-
-
-/* #topline, #middleline, #bottomline {
-  background-color: #E0E0E0;
-  isolation: isolate;
-  float: right;
-  margin-top: 4px;
-  margin-right: 1em;
-  height: 3px;
-  width: 30px;
-  display: block;
-  
-
-} */
 
 
 hr.rounded {
@@ -804,21 +787,14 @@ column-gap: 3em;
   }
 }
 
-@media screen and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
-  #project::before {
-    background-attachment: scroll !important; /* disable fixed on iOS */
-    background-position: center !important;   /* keep same alignment */
-    background-size: cover !important;        /* same scaling as other pages */
-  }
-}
 
-/* Disable background-attachment: fixed on iOS to prevent zoom issues
+ /* Disable background-attachment: fixed on iOS to prevent zoom issues */
 @media screen and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
   #index::before,
   #project::before,
   #contactme::before {
     background-attachment: scroll !important; /* prevent iOS zoom bug */
-    /* background-position: center !important; 
-    background-size: cover !important;
+    background-position: center !important; /* keep same alignment */
+    background-size: cover !important; /* same scaling as other pages */
   }
-} */ 
+} 
