@@ -785,6 +785,18 @@ column-gap: 3em;
   #submit {
     width: 20%;
   }
+
+  /* Disable background-attachment: fixed on iOS to prevent zoom issues */
+@media screen and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  #index::before,
+  #project::before,
+  #contactme::before {
+    background-attachment: scroll !important; /* prevent iOS zoom bug */
+    background-position: center !important; 
+    background-size: cover !important;
+  }
+}
+
 }
 
 
