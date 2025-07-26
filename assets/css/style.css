@@ -65,7 +65,7 @@ nav { grid-area: nav; }
 #project {
   position: relative; 
   min-height: 100vh;
-  /* background-color: #0b81b6; */
+   background-color: #0b81b6; 
   background: url(../images/michael-dziedzic-qDG7XKJLKbs-unsplash.jpg)
               center / cover no-repeat fixed;
 } 
@@ -104,7 +104,7 @@ nav { grid-area: nav; }
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(11, 129, 182, 0.3); /* 40% opacity tint */
+  background: rgba(11, 129, 182, 0.3); /* 30% opacity tint */
   pointer-events: none; 
 }
 /* #project::after {
@@ -174,7 +174,7 @@ nav { grid-area: nav; }
   text-align: center;
   margin-bottom: 25px;
   z-index: 100;
-  position: relative;
+  position: scroll;
  
 }
  
