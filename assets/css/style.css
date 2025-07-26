@@ -65,10 +65,12 @@ nav { grid-area: nav; }
 #project {
   position: relative; 
   min-height: 100vh;
-  background-color: #0b81b6;
+  /* background-color: #0b81b6; */
+  background: url(../images/michael-dziedzic-qDG7XKJLKbs-unsplash.jpg)
+              center / cover no-repeat fixed;
 } 
 
-#project::before {
+/* #project::before {
   background-image: url(../images/michael-dziedzic-qDG7XKJLKbs-unsplash.jpg);
   background-position: center;
   background-size: cover;
@@ -79,7 +81,7 @@ nav { grid-area: nav; }
   background-repeat: no-repeat;
   background-attachment: fixed;
  
-}
+} */
 
 
 #project {
@@ -96,6 +98,22 @@ nav { grid-area: nav; }
   row-gap: 3em;
 
 }
+
+/* Bluish overlay matching #0b81b6 */
+#project::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 129, 182, 0.3); /* 40% opacity tint */
+  /* pointer-events: none; allows clicks through */
+}
+/* #project::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3); /* adjust tint */
+  /* pointer-events: none; /* don’t block clicks */
+
 
 nav { grid-area: nav; }
 #projectheading { grid-area: projectheading; }
@@ -403,7 +421,7 @@ nav {
   margin-bottom: 3em;
   height: 15px;
   font-size: 26px;
-   z-index: 300; 
+  z-index: 300; 
   display: none;
   
  }
@@ -432,6 +450,7 @@ hr.rounded {
   font-size: 26px;
   isolation: isolate;
   text-align: center;
+  z-index: 100;
  
 }
 
