@@ -75,7 +75,7 @@ nav { grid-area: nav; }
   content: "";
   position: absolute;
   inset: 0;
-  opacity: .6;
+  opacity: .7;
   background-repeat: no-repeat;
   background-attachment: fixed;
  
@@ -788,13 +788,4 @@ column-gap: 3em;
 }
 
 
- /* Disable background-attachment: fixed on iOS to prevent zoom issues */
-/* @media screen and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
-  #index::before,
-  #project::before,
-  #contactme::before {
-    background-attachment: scroll !important; /* prevent iOS zoom bug */
-    /* background-position: center !important; /* keep same alignment  */
-    /* background-size: cover !important; /* same scaling as other pages */
-  /* } */
- /* } */ 
+ 
