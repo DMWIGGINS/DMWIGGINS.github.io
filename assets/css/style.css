@@ -12,7 +12,6 @@ body {
   z-index: -1;
   background: url(../images/michael-dziedzic-qDG7XKJLKbs-unsplash.jpg) center / cover no-repeat;
   inset: 0;
-  opacity: .6; 
   transform: translateZ(0);
   will-change: transform;
   backface-visibility: hidden;
@@ -34,21 +33,27 @@ section {
   pointer-events: none; 
 }
 
-
-
-/* #index::before {
-  background-image: url(../images/michael-dziedzic-qDG7XKJLKbs-unsplash.jpg);
-  background-position: center;
-  background-size: cover;
+#project::before {
   content: "";
   position: absolute;
   inset: 0;
-  opacity: .6;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
- 
+  background: rgba(11, 129, 182, 0.3); 
+  z-index: -1;
+  pointer-events: none; 
+}
 
-}  */
+#contactme::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(35, 43, 63, 0.5); 
+  z-index: -1;
+  pointer-events: none; 
+}
+
+
+
+
 
 #index {
   display: grid;
@@ -72,6 +77,7 @@ nav { grid-area: nav; }
   font-size: 20px;
   color: #a4b6c3;
 } 
+
 .biophoto {
   float: left;
   clip-path: circle(50%);
@@ -81,28 +87,6 @@ nav { grid-area: nav; }
  
 }
 
-
-
-#project {
-  position: relative; 
-  min-height: 100vh;
-  background-color: #0b81b6; 
-  background: url(../images/michael-dziedzic-qDG7XKJLKbs-unsplash.jpg)
-              center / cover no-repeat fixed;
-} 
-
-/* #project::before {
-  background-image: url(../images/michael-dziedzic-qDG7XKJLKbs-unsplash.jpg);
-  background-position: center;
-  background-size: cover;
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: .7;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
- 
-} */
 
 
 #project {
@@ -120,20 +104,6 @@ nav { grid-area: nav; }
 
 }
 
-/* Bluish overlay matching #0b81b6 */
-#project::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(11, 129, 182, 0.3); /* 30% opacity tint */
-  pointer-events: none; 
-}
-/* #project::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.3); /* adjust tint */
-  /* pointer-events: none; /* don’t block clicks */
 
 
 nav { grid-area: nav; }
@@ -290,27 +260,6 @@ a {
  
 } 
 
-#contactme {
- position: relative;
- min-height: 100vh;
- background-color: #232B3F;
- color: #E0E0E0;
- 
-}
-
-#contactme::before {
-  background-image: url(../images/michael-dziedzic-qDG7XKJLKbs-unsplash.jpg);
-  background-position: center;
-  background-size: cover;
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: .6;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
- 
- 
-} 
 
 #contactme {
   display: grid;
@@ -490,7 +439,7 @@ hr.rounded {
   isolation: isolate;
   margin-bottom: 4em;
   font-size: 16px;
-  background: linear-gradient(135deg, #536594,#3e4a72, #232B3F, #61497e, #5c5376, #595e8c, #536594, #3e4a72, #232B3F, #61497e, #5c5376, #595e8c, #536594,#3e4a72, #232B3F, #61497e, #5c5376, #595e8c, #536594 );
+  background: linear-gradient(135deg, #536594,#3e4a72, #232B3F, #61497e, #5c5376, #595e8c, #536594, #3e4a72, #232B3F, #61497e, #5c5376, #595e8c, #536594,#3e4a72, #232B3F, #61497e, #5c5376, #595e8c, #536594);
   background-size: 300% 300%;
   animation-name: mood;
   animation-duration: 10s;
@@ -827,18 +776,6 @@ column-gap: 3em;
   #submit {
     width: 20%;
   }
-
-  /* Disable background-attachment: fixed on iOS to prevent zoom issues
-@media screen and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
-  #index::before,
-  #project::before,
-  #contactme::before {
-    background-attachment: scroll !important; /* prevent iOS zoom bug */
-    /* background-position: center !important; 
-    background-size: auto 100vh !important;
-    
-  }
-} */
  
 }
  
