@@ -13,7 +13,7 @@ body {
   z-index: -1;
   background: url(../images/michael-dziedzic-qDG7XKJLKbs-unsplash.jpg) center / cover no-repeat;
   inset: 0;
-  opacity: .4; 
+  opacity: .6; 
   
 }
 
@@ -29,7 +29,7 @@ body {
 
 #index::after {
   content: "";
-  position: absolute;
+  position: fixed;
   inset: 0;
   background: rgba(83, 101, 148); /* 30% opacity tint */
   z-index: -2;
