@@ -2,6 +2,7 @@
   margin: 0;
   box-sizing: border-box;
 }
+
   html, body {
   height: 100%;
   width: 100%;
@@ -9,7 +10,7 @@
   -webkit-overflow-scrolling: touch; /* smoother iOS scroll */
 }
 
-}
+
 
 .bg {
   position: fixed;
