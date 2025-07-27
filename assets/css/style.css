@@ -20,7 +20,9 @@ body {
 
 section {
   position: relative;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
   z-index: 0
 }
 
@@ -549,6 +551,7 @@ textarea:focus {
   outline-color:#e7e482;
   outline-width: 1px;
   padding: 2em;
+  margin-top: auto;
   
 }
 @media screen and (max-width: 395px) {
