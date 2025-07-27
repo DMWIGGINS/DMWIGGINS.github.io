@@ -4,7 +4,13 @@
 }
 
 body {
-  height: 100dvh;
+  html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; /* smoother iOS scroll */
+}
+
 }
 
 .bg {
@@ -48,7 +54,7 @@ section {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(35, 43, 63, 0.5); 
+  background: rgba(35, 43, 63, 0.4); 
   z-index: -1;
   pointer-events: none; 
 }
