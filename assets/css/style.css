@@ -23,7 +23,7 @@ section {
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
-  z-index: 0
+  z-index: 1
 }
 
 #index::before {
