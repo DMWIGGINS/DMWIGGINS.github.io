@@ -7,15 +7,35 @@ body {
   height: 100vh;
 }
 
+.bg {
+  
+  position: fixed;
+  z-index: -1;
+  background: url(../images/michael-dziedzic-qDG7XKJLKbs-unsplash.jpg) center / cover no-repeat;
+  inset: 0;
+  opacity: .4; 
+  
+}
 
 #index {
   position: relative;
   min-height: 100vh;
-  background-color: #536594;
+  
+ 
+  
  
 }
 
-#index::before {
+
+#index::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(83, 101, 148); /* 30% opacity tint */
+  z-index: -2;
+  pointer-events: none; 
+}
+/* #index::before {
   background-image: url(../images/michael-dziedzic-qDG7XKJLKbs-unsplash.jpg);
   background-position: center;
   background-size: cover;
@@ -27,7 +47,7 @@ body {
   background-attachment: fixed;
  
 
-} 
+}  */
 
 #index {
   display: grid;
@@ -65,7 +85,7 @@ nav { grid-area: nav; }
 #project {
   position: relative; 
   min-height: 100vh;
-   background-color: #0b81b6; 
+  background-color: #0b81b6; 
   background: url(../images/michael-dziedzic-qDG7XKJLKbs-unsplash.jpg)
               center / cover no-repeat fixed;
 } 
@@ -174,7 +194,7 @@ nav { grid-area: nav; }
   text-align: center;
   margin-bottom: 25px;
   z-index: 100;
-  position: scroll;
+  position: relative;
  
 }
  
@@ -807,18 +827,17 @@ column-gap: 3em;
     width: 20%;
   }
 
-  /* Disable background-attachment: fixed on iOS to prevent zoom issues */
+  /* Disable background-attachment: fixed on iOS to prevent zoom issues
 @media screen and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
   #index::before,
   #project::before,
   #contactme::before {
     background-attachment: scroll !important; /* prevent iOS zoom bug */
-    background-position: center !important; 
-    background-size: cover !important;
+    /* background-position: center !important; 
+    background-size: auto 100vh !important;
+    
   }
+} */
+ 
 }
-
-}
-
-
  
