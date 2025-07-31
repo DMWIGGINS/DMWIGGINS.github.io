@@ -182,19 +182,25 @@ nav { grid-area: nav; }
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-areas: "icon-live icon-live icon-code icon-code";
+  grid-template-areas: "gridlive gridlive gridcode gridcode";
   
                         
 }
 
-.icon-live { grid-area: icon-live; }
-.icon-code { grid-area: icon-code; }
+.gridlive { grid-area: gridlive; }
+.gridcode { grid-area: gridcode; }
 
 a {
   text-decoration: none;
 }
-
+.gridlive, .gridcode {
+  display: flex;
+  justify-content: center;
+}
 .live, .disabled {
+  
+  
+
   background-color: #e7e482;
   font-size: 12px;
   border-radius: 10%;
@@ -202,7 +208,7 @@ a {
   color: black;
   height: 49px;
   width: 89px;
-  
+  padding-top: 2px;
 }
 
 .live:hover {
@@ -217,6 +223,7 @@ a {
 }
  
 .code {
+  
   background-color: #e7e482;
   font-size: 12px;
   border-radius: 10%;
@@ -224,8 +231,7 @@ a {
   color: black;
   height: 49px;
   width: 89px;
-  
-  
+  padding-top: 2px;
 
 }
 
@@ -234,15 +240,9 @@ a {
   color: white;
 }
 
-
-
-
 .code > .icon-default {
   display: block;
-  padding-left: 25px;
-  
-  
-  
+  padding-left: 32px;
   
 }
 
@@ -257,9 +257,11 @@ a {
 
 .code:hover > .icon-hover {
   display: block;
-  padding-left: 25px;
   color: white;
   background-color: #232B3F;
+  padding-left: 32px;
+ 
+  
  
 } 
 
