@@ -460,6 +460,7 @@ hr.rounded {
   
 #letschat {
     text-align: center;
+    font-style: italic;
   }
     
 #connectinvite {
@@ -468,7 +469,8 @@ hr.rounded {
 }
 
 #connecttext {
-  background-color: rgba(97, 73, 126, 0.5);
+  /* background-color: rgba(97, 73, 126, 0.5); */
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 
