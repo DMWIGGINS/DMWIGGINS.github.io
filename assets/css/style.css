@@ -1,3 +1,5 @@
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable declaration-block-no-redundant-longhand-properties */
 * {
   margin: 0;
   box-sizing: border-box;
@@ -10,17 +12,15 @@
   -webkit-overflow-scrolling: touch; /* smoother iOS scroll */
 }
 
-
-
+/* background image for all pages */
 .bg {
   position: fixed;
   z-index: -1;
-  background: url(../images/michael-dziedzic-qDG7XKJLKbs-unsplash.jpg) center / cover no-repeat;
+  background: url("../images/michael-dziedzic-qDG7XKJLKbs-unsplash.jpg") center / cover no-repeat;
   inset: 0;
   transform: translateZ(0);
   will-change: transform;
   backface-visibility: hidden;
-  
 }
 
 section {
@@ -31,6 +31,7 @@ section {
   z-index: 1
 }
 
+/* layer different opaque color for each page */
 #index::before {
   content: "";
   position: absolute;
@@ -58,238 +59,10 @@ section {
   pointer-events: none; 
 }
 
-#index {
-  display: grid;
-  grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) min-content;;
-  grid-template-columns: minmax(48.75px, auto) 1fr 3fr 3fr 1fr minmax(48.75px, auto);
-  grid-template-areas: "nav nav nav nav nav nav"
-                       "aboutme aboutme aboutme aboutme aboutme aboutme"
-                       ". bio bio bio bio .";
-  
-  row-gap: 3em;                     
-  
-}
-
-nav { grid-area: nav; }
-#aboutme { grid-area: aboutme; }
-#bio  { grid-area: bio; }
-
-
-#intro {
-  font-style: italic;
-  font-size: 20px;
-  color: #a4b6c3;
-} 
-
-.biophoto {
-  float: left;
-  clip-path: circle(50%);
-  shape-outside: circle(50%);
-  margin-right: 20px;
-  margin-top: 20px;
- 
-}
-
-
-
-#project {
-  display: grid;
-  grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto;
-  grid-template-columns: minmax(48.75px, auto) 3fr 3fr 3fr 3fr minmax(48.75px, auto);
-  grid-template-areas: "nav nav nav nav nav nav"
-                      "projectheading projectheading projectheading projectheading projectheading projectheading"
-                      ". projectone projectone projectone projectone ."
-                      ". projecttwo projecttwo projecttwo projecttwo ."
-                      ". projectthree projectthree projectthree projectthree ."
-                      ". projectfour projectfour projectfour projectfour .";
-  column-gap: 1em;
-  row-gap: 3em;
-
-}
-
-
-
-nav { grid-area: nav; }
-#projectheading { grid-area: projectheading; }
-#projectone  { grid-area: projectone; }
-#projecttwo  { grid-area: projecttwo; }
-#projectthree  { grid-area: projectthree; }
-#projectfour  { grid-area: projectfour; }
-
-
-#projectone, #projecttwo, #projectthree, #projectfour {
-  display: grid;
-  grid-template-rows: minmax(70px, 53px) auto auto minmax(48px, 70px);
-  grid-template-columns: 1fr 3fr 3fr 1fr;
-  grid-template-areas: "title title title title"
-                        "screenshot screenshot screenshot screenshot"
-                        ". description description ."
-                        "cardfooter cardfooter cardfooter cardfooter";
-                        
-  column-gap: 1em;
-  row-gap: 1em;                     
-
-}
-
-.title { grid-area: title; }
-.screenshot { grid-area: screenshot; }
-.description { grid-area: description; }
-.cardfooter { grid-area: cardfooter; }
-
-
-.title {
-  text-align: center;
-  padding-top: 10px;
-  font-size: 22px;
-  color: #c8d3db;
-  margin-bottom: 0px;
-}
-
-.screenshot {
-  width: 100%;  
-  height: auto;
-  border-width: 3px;
-  border-style: outset;
-  border-color: #232B3F;
- 
-}
-
-.projectcard {
-  border-width: 1px;
-  border-style: solid;
-  border-color: #e7e482;
-  /* border-color: #536594; */
-  /* color: #bad5e4; */
-  color: #E0E0E0;
-  /* color: #E0E0E0; */
-  /* color: #CCCCCC; */
-  /* color: #DCDCDC; */
-  background-color: #232B3F;
-  text-align: center;
-  margin-bottom: 25px;
-  z-index: 100;
-  position: relative;
- 
-}
- 
-  .description {
-    /* text-align: justify; possibly for larger than 400 width*/
-    text-align: left;
-  }
-
-
-.cardfooter {
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-areas: "gridlive gridlive gridcode gridcode";
-  
-                        
-}
-
-.gridlive { grid-area: gridlive; }
-.gridcode { grid-area: gridcode; }
-
-a {
-  text-decoration: none;
-}
-
-.gridlive, .gridcode {
-  display: flex;
-  justify-content: center;
-}
-
-.live, .disabled {
-  background-color: #e7e482;
-  font-size: 12px;
-  border-radius: 10%;
-  border: 1px solid #e7e482;
-  color: black;
-  height: 49px;
-  width: 89px;
-  padding-top: 2px;
-}
-
-.live:hover {
-  background-color: #232B3F;
-  color: white;
-
-}
-
-.disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
- 
-.code {
-  
-  background-color: #e7e482;
-  font-size: 12px;
-  border-radius: 10%;
-  border: 1px solid #e7e482;
-  color: black;
-  height: 49px;
-  width: 89px;
-  padding-top: 2px;
-
-}
-
-.code:hover {
-  background-color: #232B3F;
-  color: white;
-}
-
-.code > .icon-default {
-  display: block;
-  padding-left: 32px;
-  
-}
-
-.code:hover > .icon-default {
-  display: none;
-  
-}
-
-.code > .icon-hover {
-  display: none
-}
-
-.code:hover > .icon-hover {
-  display: block;
-  color: white;
-  background-color: #232B3F;
-  padding-left: 32px;
- 
-  
- 
-} 
-
-
-#contactme {
-  display: grid;
-  grid-template-rows: minmax(75px, 75px) minmax(75px, auto) min-content auto auto;
-  grid-template-columns: minmax(48.75px, auto) 3fr 3fr 3fr 3fr minmax(48.75px, auto);
-  grid-template-areas: "nav nav nav nav nav nav"
-                       "contactheading contactheading contactheading contactheading contactheading contactheading"
-                       ". connectinvite connectinvite connectinvite connectinvite ."
-                       ". contactform contactform contactform contactform ."
-                       "footer footer footer footer footer footer";
-  column-gap: 1em;
-  row-gap: 3em;
-  
-}
-
-nav { grid-area: nav; }
-#contactheading { grid-area: contactheading; }
-#connectinvite  { grid-area: connectinvite; }
-#contactform { grid-area: contactform; }
-#footer { grid-area: footer }
-
-
+/* fonts */
 .adlam-display-regular {
   font-family: "ADLaM Display", system-ui;
-  font-weight: 400;
-  font-style: regular;
+  font-weight: 400;  
 }
 
 .adlam-display-italic {
@@ -304,11 +77,82 @@ nav { grid-area: nav; }
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+  font-variation-settings: "wdth" 100;
 }
 
+/* nav bar */
+nav ul {
+  list-style-type: none;
+  margin-top: 2em;
+  padding: 0; 
+}
 
+nav li {
+   margin-right: 1em; 
+   padding-top: 1em; 
+   padding-bottom: 1em; 
+   border-bottom: 1px solid #ccc; 
+   text-align: center; 
+}
+
+nav a {
+  color:#e0e0e0;
+  text-decoration: none;
+}
+
+.nav-toggle {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.nav-toggle-label {  
+  color:#e0e0e0;
+  grid-column: 6;
+  grid-row: 1;
+}
+
+nav {
+  grid-column: 1 / 7;
+  grid-row: 1;   
+}
+
+.fa-bars {
+  position: fixed;
+  color: #e0e0e0;
+  float: right;
+  margin-top: 1em;
+  margin-right: 1em;
+  margin-bottom: 3em;
+  height: 15px;
+  font-size: 26px;
+  z-index: 300; 
+}
+
+.fa-xmark {
+  position: fixed; 
+  color: #e0e0e0;
+  float: right;
+  margin-top: 1em;
+  margin-right: 1em;
+  margin-bottom: 3em;
+  height: 15px;
+  font-size: 26px;
+  z-index: 300; 
+  display: none; }
+
+.nav-toggle:checked ~ .nav-toggle-label .fa-bars {
+  display: none;
+} 
+
+.nav-toggle:checked ~ .nav-toggle-label .fa-xmark {
+  display: block;
+} 
+
+.nav-toggle:checked ~ #sidemenu {
+  right: 0;
+} 
 
 nav {
   font-size: 18px;
@@ -324,121 +168,41 @@ nav {
   height: 100%; 
 }
 
-nav ul {
-  list-style-type: none;
-  margin-top: 2em;
-  padding: 0; 
-  
-}
-
-nav li {
-   margin-right: 1em; 
-   padding-top: 1em; 
-   padding-bottom: 1em; 
-   border-bottom: 1px solid #cccccc; 
-   text-align: center; 
-
-}
-
-nav a {
-
-  color:#E0E0E0;
-  text-decoration: none;
-}
-
-.nav-toggle {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.nav-toggle-label {  
-  color:#E0E0E0;
-  grid-column: 6;
-  grid-row: 1;
-  
-}
-
-nav {
-  grid-column: 1 / 7;
-  grid-row: 1; 
-  
-}
-
-
-
-.fa-bars {
-  position: fixed;
-  color: #E0E0E0;
-  float: right;
-  margin-top: 1em;
-  margin-right: 1em;
-  margin-bottom: 3em;
-  height: 15px;
-  font-size: 26px;
-  z-index: 300; 
-
-
-}
-
-
-
- .fa-xmark {
-  position: fixed; 
-  color: #E0E0E0;
-  float: right;
-  margin-top: 1em;
-  margin-right: 1em;
-  margin-bottom: 3em;
-  height: 15px;
-  font-size: 26px;
-  z-index: 300; 
-  display: none;
-  
- }
-
-  .nav-toggle:checked ~ .nav-toggle-label .fa-bars {
-  display: none;
- } 
-
-  .nav-toggle:checked ~ .nav-toggle-label .fa-xmark {
-  display: block;
- } 
-
-
-  .nav-toggle:checked ~ #sidemenu {
-   right: 0;
-  } 
-
-
 hr.rounded {
   display: none;
 }
 
-
 .page-heading {
-  color: #E0E0E0;
+  color: #e0e0e0;
   font-size: 26px;
   text-align: center;
   z-index: 100;
- 
 }
 
+/* About Me page */
+#index {
+  display: grid;
+  grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) min-content;
+  grid-template-columns: minmax(48.75px, auto) 1fr 3fr 3fr 1fr minmax(48.75px, auto);
+  grid-template-areas: "nav nav nav nav nav nav"
+                       "aboutme aboutme aboutme aboutme aboutme aboutme"
+                       ". bio bio bio bio .";
+  row-gap: 3em;                       
+}
+
+nav { grid-area: nav; }
+#aboutme { grid-area: aboutme; }
+#bio  { grid-area: bio; }
+
 #bio {
-   /* color: #bad5e4; */
-  /* color: #B0BEC5; */
   border-style: solid;
   border-width: 1px;
   border-color: #e7e482;
   padding: 20px;
-  color: #E0E0E0;
-  /* color: #CCCCCC; */
-  /* color: #DCDCDC; */
-
+  color: #e0e0e0;
   margin-bottom: 4em;
   font-size: 16px;
-  background: linear-gradient(135deg, #536594,#3e4a72, #232B3F, #61497e, #5c5376, #595e8c, #536594, #3e4a72, #232B3F, #61497e, #5c5376, #595e8c, #536594,#3e4a72, #232B3F, #61497e, #5c5376, #595e8c, #536594);
+  background: linear-gradient(135deg, #536594,#3e4a72, #232b3f, #61497e, #5c5376, #595e8c, #536594, #3e4a72, #232b3f, #61497e, #5c5376, #595e8c, #536594,#3e4a72, #232b3f, #61497e, #5c5376, #595e8c, #536594);
   background-size: 300% 300%;
   animation-name: mood;
   animation-duration: 10s;
@@ -446,26 +210,206 @@ hr.rounded {
   animation-timing-function: linear; 
 }
   
-  @keyframes mood {
-    0% {
+@keyframes mood {
+  0% {
     background-position: top 0 left 0;
-    } 
-     
-    100% {
-    background-position:  bottom 0 right 0;
-    }
+  } 
 
-    }
-  
-  
-#letschat {
-    text-align: center;
-    font-style: italic;
+  100% {
+    background-position:  bottom 0 right 0;
   }
+}
+
+#intro {
+  font-style: italic;
+  font-size: 20px;
+  color: #a4b6c3;
+} 
+
+.biophoto {
+  float: left;
+  clip-path: circle(50%);
+  shape-outside: circle(50%);
+  margin-right: 20px;
+  margin-top: 20px; 
+}
+
+/* Projects page */
+#project {
+  display: grid;
+  grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto;
+  grid-template-columns: minmax(48.75px, auto) 3fr 3fr 3fr 3fr minmax(48.75px, auto);
+  grid-template-areas: "nav nav nav nav nav nav"
+                       "projectheading projectheading projectheading projectheading projectheading projectheading"
+                       ". projectone projectone projectone projectone ."
+                       ". projecttwo projecttwo projecttwo projecttwo ."
+                       ". projectthree projectthree projectthree projectthree ."
+                       ". projectfour projectfour projectfour projectfour .";
+  column-gap: 1em;
+  row-gap: 3em;
+}
+
+nav { grid-area: nav; }
+#projectheading { grid-area: projectheading; }
+#projectone  { grid-area: projectone; }
+#projecttwo  { grid-area: projecttwo; }
+#projectthree  { grid-area: projectthree; }
+#projectfour  { grid-area: projectfour; }
+
+#projectone, #projecttwo, #projectthree, #projectfour {
+  display: grid;
+  grid-template-rows: minmax(70px, 53px) auto auto minmax(48px, 70px);
+  grid-template-columns: 1fr 3fr 3fr 1fr;
+  grid-template-areas: "title title title title"
+                       "screenshot screenshot screenshot screenshot"
+                       ". description description ."
+                       "cardfooter cardfooter cardfooter cardfooter";                    
+  column-gap: 1em;
+  row-gap: 1em;                     
+}
+
+.title { grid-area: title; }
+.screenshot { grid-area: screenshot; }
+.description { grid-area: description; }
+.cardfooter { grid-area: cardfooter; }
+
+.title {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 22px;
+  color: #c8d3db;
+  margin-bottom: 0;
+}
+
+.screenshot {
+  width: 100%;  
+  height: auto;
+  border-width: 3px;
+  border-style: outset;
+  border-color: #232b3f; 
+}
+
+.projectcard {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e7e482;
+  color: #e0e0e0;
+  background-color: #232b3f;
+  text-align: center;
+  margin-bottom: 25px;
+  z-index: 100;
+  position: relative; 
+}
+ 
+.description {
+  /* text-align: justify; possibly for larger than 400 width */
+  text-align: left;
+}
+
+.cardfooter {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "gridlive gridlive gridcode gridcode";                      
+}
+
+/* Links on project cards styled to look like buttons */
+.gridlive { grid-area: gridlive; }
+.gridcode { grid-area: gridcode; }
+
+.gridlive, .gridcode {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.live, .disabled {
+  background-color: #e7e482;
+  font-size: 12px;
+  border-radius: 10%;
+  border: 1px solid #e7e482;
+  color: black;
+  height: 49px;
+  width: 89px;
+  padding-top: 2px;
+  text-decoration: none;
+}
+
+.live:hover {
+  background-color: #232b3f;
+  color: white;
+}
+
+.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+ 
+.code {
+  background-color: #e7e482;
+  font-size: 12px;
+  border-radius: 10%;
+  border: 1px solid #e7e482;
+  color: black;
+  height: 49px;
+  width: 89px;
+  padding-top: 2px;
+  text-decoration: none;
+}
+
+.code:hover {
+  background-color: #232b3f;
+  color: white;
+}
+
+.code > .icon-default {
+  display: block;
+  padding-left: 32px;  
+}
+
+.code:hover > .icon-default {
+  display: none;  
+}
+
+.code > .icon-hover {
+  display: none
+}
+
+.code:hover > .icon-hover {
+  display: block;
+  color: white;
+  background-color: #232b3f;
+  padding-left: 32px;
+} 
+
+/* Contact page */
+#contactme {
+  display: grid;
+  grid-template-rows: minmax(75px, 75px) minmax(75px, auto) min-content auto auto;
+  grid-template-columns: minmax(48.75px, auto) 3fr 3fr 3fr 3fr minmax(48.75px, auto);
+  grid-template-areas: "nav nav nav nav nav nav"
+                       "contactheading contactheading contactheading contactheading contactheading contactheading"
+                       ". connectinvite connectinvite connectinvite connectinvite ."
+                       ". contactform contactform contactform contactform ."
+                       "footer footer footer footer footer footer";
+  column-gap: 1em;
+  row-gap: 3em;  
+}
+
+nav { grid-area: nav; }
+#contactheading { grid-area: contactheading; }
+#connectinvite  { grid-area: connectinvite; }
+#contactform { grid-area: contactform; }
+#footer { grid-area: footer }
+
+#letschat {
+  text-align: center;
+  font-style: italic;
+}
     
 #connectinvite {
   font-size: 16px;
-  color: #E0E0E0;
+  color: #e0e0e0;
 }
 
 #connecttext {
@@ -473,24 +417,20 @@ hr.rounded {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-
 #contactform {
   display: grid;
   font-size: 14px;
-  background-color: #232B3F;
+  background-color: #232b3f;
   padding: 20px;
   border: 1px solid #e7e482;
-  
-
 }
 
 label {
   float: left;
-  color: #E0E0E0;
-  
+  color: #e0e0e0; 
 } 
 
-input[type=text], input[type=email] { 
+input[type="text"], input[type="email"] { 
   width: 100%;
   background-color: #536594;
   border-radius: 8px;
@@ -502,15 +442,13 @@ input:focus {
   outline-color: #e7e482;
 }
 
-
 textarea {
   width: 100%;
   height: 225px;
   resize: none;
   background-color: #536594;
   border-radius: 8px;
-  outline: 1px solid;
-  
+  outline: 1px solid;  
 }
 
 ::placeholder {
@@ -537,268 +475,233 @@ textarea:focus {
   border: 1px solid #e7e482;
 }
   
-
-
 #submit:hover {
-  background-color: #232B3F;
+  background-color: #232b3f;
   color: white;
   border: 1px solid #e7e482;
 }
 
 #footer {
-  /* display: flex; */
   text-align: center;
-  /* position: relative; */
-  background-color: #232B3F ;
-  color: #E0E0E0;
+  background-color: #232b3f ;
+  color: #e0e0e0;
   outline-style: solid;
   outline-color:#e7e482;
   outline-width: 1px;
   padding: 2em;
   margin-top: auto;
-  font-size: 14px;
-  
+  font-size: 14px;  
 }
 
-@media screen and (max-width: 395px) {
+/*  Media Queries */
+@media screen and (width >= 395px) {
+  /* center photo on small screens */
+  .biophoto {
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
 
-.biophoto {
-  display: block;
-  float: none;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
-
+  #intro {
+    text-align: justify;
+    font-size: 18px;
+  }
 }
 
-#intro {
-text-align: justify;
-font-size: 18px;
 
+@media screen and (width >= 600px) {
+  nav {
+    font-size: 15px;
+    display: block;
+    position: static;
+    width: auto;
+    padding: 0;
+    background: transparent;
+    height: auto;
+  }
 
-}
+  nav ul {
+    list-style-type: none;
+    float: right;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
 
-}
+  nav li {
+    float: left;
+    padding: 0;
+    border-bottom: 0 solid #cccccc; 
+  }
 
-@media screen and (min-width: 600px) {
- 
+  nav a {
+    display: block;
+    color: #e0e0e0;
+    text-align: center;
+    text-decoration: none;
+    padding: 14px 34px;
+  }
 
- nav {
-  font-size: 15px;
-  display: block;
-  position: static;
-  width: auto;
-  padding: 0;
-  background: transparent;
-  height: auto;
-}
+  nav a:hover {
+    background-color: #232b3f;
+    color: #E0E0E0;
+    border-radius: 10px;
+  }
 
- nav ul {
-  list-style-type: none;
-  float: right;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
+  .active {
+    background-color: #e7e482; 
+    color: #232B3F; 
+    border-radius: 10px;
+  }
 
-nav li {
-  float: left;
-  padding: 0;
-  border-bottom: 0px solid #cccccc; 
-}
-nav a {
+  .nav-toggle {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
 
-  display: block;
-  color: #E0E0E0;
-  text-align: center;
-  text-decoration: none;
- 
-  padding: 14px 34px;
-}
+  .nav-toggle-label {
+    display: none;
+  }
 
-nav a:hover {
-   background-color: #232B3F;
-   color: #E0E0E0;
-   border-radius: 10px;
-}
+  hr.rounded {
+    border-top: 1px solid #e7e482;
+    border-radius: 5px;
+    width: 98%;
+    margin: 5px auto;
+    display: block;
+  }
 
-.active {
-  background-color: #e7e482; 
-  color: #232B3F; 
-  border-radius: 10px;
-}
-.nav-toggle {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.nav-toggle-label {
-  display: none;
-  
-}
-
-hr.rounded {
-  border-top: 1px solid #e7e482;
-  border-radius: 5px;
-  width: 98%;
-  margin: 5px auto;
-  display: block;
-}
-
-#index {
-  display: grid;
-  grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) min-content;
-  grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr;
-  grid-template-areas: "nav nav nav nav nav nav"
-                       "aboutme aboutme aboutme aboutme aboutme aboutme"
-                       ". . bio bio . .";
-                  
-  
+  #index {
+    display: grid;
+    grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) min-content;
+    grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr;
+    grid-template-areas: "nav nav nav nav nav nav"
+                         "aboutme aboutme aboutme aboutme aboutme aboutme"
+                         ". . bio bio . .";
   }
 
   #project {
-  display: grid;
-  grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto;
-  grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
-  grid-template-areas: "nav nav nav nav nav nav"
-                      "projectheading projectheading projectheading projectheading projectheading projectheading"
-                      " . projectone projectone projecttwo projecttwo . "
-                      " . projectthree projectthree projectfour projectfour . ";
-column-gap: 1em;
-                      
-}
+    display: grid;
+    grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto;
+    grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
+    grid-template-areas: "nav nav nav nav nav nav"
+                         "projectheading projectheading projectheading projectheading projectheading projectheading"
+                         " . projectone projectone projecttwo projecttwo . "
+                         " . projectthree projectthree projectfour projectfour . ";
+    column-gap: 1em;                      
+  }
 
+  #connecttext {
+    background-color: transparent;
+  }
 
-#connecttext {
-  background-color: transparent;
-}
-#contactform {
-  font-size: 18px;
-}
+  #contactform {
+    font-size: 18px;
+  }
 
-#submit {
+  #submit {
     width: 20%;
   }
 }
 
-@media only screen and (min-width: 768px) {
-
-#index {
-  
-  display: grid;
-  grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) min-content;
-  grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr;
-  grid-template-areas: "nav nav nav nav nav nav"
-                       "aboutme aboutme aboutme aboutme aboutme aboutme"
-                       ". . bio bio . .";
-row-gap:3em;
-column-gap: 3em;                     
-    
+@media only screen and (width >= 768px) {
+  #index {
+    display: grid;
+    grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) min-content;
+    grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr;
+    grid-template-areas: "nav nav nav nav nav nav"
+                         "aboutme aboutme aboutme aboutme aboutme aboutme"
+                         ". . bio bio . .";
+    row-gap:3em;
+    column-gap: 3em;                       
   }
 
-
-
   #project {
-  display: grid;
-  grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto;
-  grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
-  grid-template-areas: "nav nav nav nav nav nav"
-                      "projectheading projectheading projectheading projectheading projectheading projectheading"
-                      " . projectone projectone projecttwo projecttwo . "
-                      " . projectthree projectthree projectfour projectfour . ";
-column-gap: 3em;
-                      
-}
+    display: grid;
+    grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto;
+    grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
+    grid-template-areas: "nav nav nav nav nav nav"
+                         "projectheading projectheading projectheading projectheading projectheading projectheading"
+                         " . projectone projectone projecttwo projecttwo . "
+                         " . projectthree projectthree projectfour projectfour . ";
+    column-gap: 3em;                  
+  }
 
   #contactme {
-   grid-template-rows: minmax(auto, 75px) minmax(auto, 60px) auto auto minmax(90px, auto);
-   grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
-   grid-template-areas: "nav nav nav nav nav nav"
-                       "contactheading contactheading contactheading contactheading contactheading contactheading"
-                       ". connectinvite connectinvite connectinvite connectinvite ."
-                       ". contactform contactform contactform contactform ."
-                       "footer footer footer footer footer footer";
-  column-gap: 3em;
-  row-gap: 3em;
-
+    grid-template-rows: minmax(auto, 75px) minmax(auto, 60px) auto auto minmax(90px, auto);
+    grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
+    grid-template-areas: "nav nav nav nav nav nav"
+                         "contactheading contactheading contactheading contactheading contactheading contactheading"
+                         ". connectinvite connectinvite connectinvite connectinvite ."
+                         ". contactform contactform contactform contactform ."
+                         "footer footer footer footer footer footer";
+    column-gap: 3em;
+    row-gap: 3em;
   }
 }
 
-@media only screen and (min-width:  992px) {
-
+@media only screen and (width >=  992px) {
   #index {
-  display: grid;
-  grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) min-content;
-  grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr;
-  grid-template-areas: "nav nav nav nav nav nav"
-                       "aboutme aboutme aboutme aboutme aboutme aboutme"
-                       ". . bio bio . .";
-row-gap:3em;
-column-gap: 3em;                     
-    
+    display: grid;
+    grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) min-content;
+    grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr;
+    grid-template-areas: "nav nav nav nav nav nav"
+                         "aboutme aboutme aboutme aboutme aboutme aboutme"
+                         ". . bio bio . .";
+    row-gap:3em;
+    column-gap: 3em;                     
   }
 
   #project {
-  display: grid;
-  grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto;
-  grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
-  grid-template-areas: "nav nav nav nav nav nav"
-                      "projectheading projectheading projectheading projectheading projectheading projectheading"
-                      " . projectone projectone projecttwo projecttwo . "
-                      " . projectthree projectthree projectfour projectfour . ";
-
-
-  column-gap: 3em;
+    display: grid;
+    grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto;
+    grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
+    grid-template-areas: "nav nav nav nav nav nav"
+                         "projectheading projectheading projectheading projectheading projectheading projectheading"
+                         " . projectone projectone projecttwo projecttwo . "
+                         " . projectthree projectthree projectfour projectfour . ";
+    column-gap: 3em;
   } 
 
   #contactme {
-  display: grid;
-  grid-template-rows: minmax(auto, 75px) minmax(auto, 60px) auto minmax(90px, auto); 
-  grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
-  grid-template-areas: "nav nav nav nav nav nav"
-                       "contactheading contactheading contactheading contactheading contactheading contactheading"
-                       ". connectinvite connectinvite contactform contactform ."
-                       "footer footer footer footer footer footer";
-row-gap:3em;
-column-gap: 3em;
-   }
-
-
+    display: grid;
+    grid-template-rows: minmax(auto, 75px) minmax(auto, 60px) auto minmax(90px, auto); 
+    grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
+    grid-template-areas: "nav nav nav nav nav nav"
+                         "contactheading contactheading contactheading contactheading contactheading contactheading"
+                         ". connectinvite connectinvite contactform contactform ."
+                         "footer footer footer footer footer footer";
+    row-gap:3em;
+    column-gap: 3em;
+  }
 }
 
-@media only screen and (min-width:  1220px) {
-
- 
-
-#project {
-  display: grid;
-  grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto;
-  grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
-  grid-template-areas: "nav nav nav nav nav nav"
-                      "projectheading projectheading projectheading projectheading projectheading projectheading"
-                      " . projectone projecttwo projectthree projectfour . ";
-row-gap:3em;
-column-gap: 3em;
-  
-}
+@media only screen and (width >=  1220px) {
+  #project {
+    display: grid;
+    grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto;
+    grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
+    grid-template-areas: "nav nav nav nav nav nav"
+                         "projectheading projectheading projectheading projectheading projectheading projectheading"
+                         " . projectone projecttwo projectthree projectfour . ";
+    row-gap:3em;
+    column-gap: 3em;
+  }
 
   #contactme {
-  display: grid;
-  grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto minmax(90px, auto); 
-  grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
-  grid-template-areas: "nav nav nav nav nav nav"
-                       "contactheading contactheading contactheading contactheading contactheading contactheading"
-                       ". connectinvite connectinvite contactform contactform ."
-                       "footer footer footer footer footer footer";
- row-gap:3em;                    
- column-gap: 3em;
-  
- 
-} 
-
-  
- 
+    display: grid;
+    grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto minmax(90px, auto); 
+    grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
+    grid-template-areas: "nav nav nav nav nav nav"
+                         "contactheading contactheading contactheading contactheading contactheading contactheading"
+                         ". connectinvite connectinvite contactform contactform ."
+                         "footer footer footer footer footer footer";
+    row-gap:3em;                    
+    column-gap: 3em;   
+  }  
 }
  

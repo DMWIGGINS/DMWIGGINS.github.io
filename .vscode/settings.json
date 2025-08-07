@@ -1,6 +1,6 @@
 {
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "CodamaSoftware.set-auto-formatting",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -8,12 +8,16 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "stylelint.snippet": [
+    "postcss",
+    "css"
+  ]
 }

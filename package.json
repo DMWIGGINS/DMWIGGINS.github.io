@@ -1,0 +1,24 @@
+{
+  "name": "dmwiggins.github.io",
+  "version": "1.0.0",
+  "description": "I am a Jr. Developer who is passionate about writing clean, reusable code that improves the user experience!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DMWIGGINS/DMWIGGINS.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DMWIGGINS/DMWIGGINS.github.io/issues"
+  },
+  "homepage": "https://github.com/DMWIGGINS/DMWIGGINS.github.io#readme",
+  "devDependencies": {
+    "stylelint": "^16.23.1",
+    "stylelint-config-standard": "^39.0.0"
+  }
+}
