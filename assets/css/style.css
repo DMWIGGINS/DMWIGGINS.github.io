@@ -493,7 +493,7 @@ textarea:focus {
 }
 
 /*  Media Queries */
-@media screen and (width >= 395px) {
+@media screen and (width <= 395px) {
   /* center photo on small screens */
   .biophoto {
     display: block;
