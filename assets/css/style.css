@@ -1,14 +1,15 @@
-
 * {
   margin: 0;
   box-sizing: border-box;
 }
 
-  html, body {
+html,
+body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-  -webkit-overflow-scrolling: touch; /* smoother iOS scroll */
+  -webkit-overflow-scrolling: touch;
+  /* smoother iOS scroll */
 }
 
 /* background image for all pages */
@@ -35,33 +36,33 @@ section {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(83, 101, 148, 0.4); 
+  background: rgba(83, 101, 148, 0.4);
   z-index: -1;
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 #project::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(11, 129, 182, 0.3); 
+  background: rgba(11, 129, 182, 0.3);
   z-index: -1;
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 #contactme::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(35, 43, 63, 0.4); 
+  background: rgba(35, 43, 63, 0.4);
   z-index: -1;
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 /* fonts */
 .adlam-display-regular {
   font-family: "ADLaM Display", system-ui;
-  font-weight: 400;  
+  font-weight: 400;
 }
 
 .adlam-display-italic {
@@ -83,19 +84,19 @@ section {
 nav ul {
   list-style-type: none;
   margin-top: 2em;
-  padding: 0; 
+  padding: 0;
 }
 
 nav li {
-   margin-right: 1em; 
-   padding-top: 1em; 
-   padding-bottom: 1em; 
-   border-bottom: 1px solid #ccc; 
-   text-align: center; 
+  margin-right: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
 }
 
 nav a {
-  color:#e0e0e0;
+  color: #e0e0e0;
   text-decoration: none;
 }
 
@@ -106,26 +107,26 @@ nav a {
   height: 0;
 }
 
-.nav-toggle-label {  
-  color:#e0e0e0;
+.nav-toggle-label {
+  color: #e0e0e0;
   grid-column: 6;
   grid-row: 1;
 }
 
 nav {
   grid-column: 1 / 7;
-  grid-row: 1;   
+  grid-row: 1;
   font-size: 18px;
-  text-align: right;  
-  position: fixed;  
-  top: 0; 
-  right: -250px; 
-  width: 250px; 
-  background: #536594; 
-  transition: right 0.4s ease;  
-  padding: 60px 20px; 
-  z-index: 200; 
-  height: 100%; 
+  text-align: right;
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  background: #536594;
+  transition: right 0.4s ease;
+  padding: 60px 20px;
+  z-index: 200;
+  height: 100%;
 }
 
 .fa-bars {
@@ -137,11 +138,11 @@ nav {
   margin-bottom: 3em;
   height: 15px;
   font-size: 26px;
-  z-index: 300; 
+  z-index: 300;
 }
 
 .fa-xmark {
-  position: fixed; 
+  position: fixed;
   color: #e0e0e0;
   float: right;
   margin-top: 1em;
@@ -149,20 +150,21 @@ nav {
   margin-bottom: 3em;
   height: 15px;
   font-size: 26px;
-  z-index: 300; 
-  display: none; }
-
-.nav-toggle:checked ~ .nav-toggle-label .fa-bars {
+  z-index: 300;
   display: none;
-} 
+}
 
-.nav-toggle:checked ~ .nav-toggle-label .fa-xmark {
+.nav-toggle:checked~.nav-toggle-label .fa-bars {
+  display: none;
+}
+
+.nav-toggle:checked~.nav-toggle-label .fa-xmark {
   display: block;
-} 
+}
 
-.nav-toggle:checked ~ #sidemenu {
+.nav-toggle:checked~#sidemenu {
   right: 0;
-} 
+}
 
 hr.rounded {
   display: none;
@@ -181,14 +183,22 @@ hr.rounded {
   grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) min-content;
   grid-template-columns: minmax(48.75px, auto) 1fr 3fr 3fr 1fr minmax(48.75px, auto);
   grid-template-areas: "nav nav nav nav nav nav"
-                       "aboutme aboutme aboutme aboutme aboutme aboutme"
-                       ". bio bio bio bio .";
-  row-gap: 3em;                       
+    "aboutme aboutme aboutme aboutme aboutme aboutme"
+    ". bio bio bio bio .";
+  row-gap: 3em;
 }
 
-nav { grid-area: nav; }
-#aboutme { grid-area: aboutme; }
-#bio  { grid-area: bio; }
+nav {
+  grid-area: nav;
+}
+
+#aboutme {
+  grid-area: aboutme;
+}
+
+#bio {
+  grid-area: bio;
+}
 
 #bio {
   border-style: solid;
@@ -198,21 +208,21 @@ nav { grid-area: nav; }
   color: #e0e0e0;
   margin-bottom: 4em;
   font-size: 16px;
-  background: linear-gradient(135deg, #536594,#3e4a72, #232b3f, #61497e, #5c5376, #595e8c, #536594, #3e4a72, #232b3f, #61497e, #5c5376, #595e8c, #536594,#3e4a72, #232b3f, #61497e, #5c5376, #595e8c, #536594);
+  background: linear-gradient(135deg, #536594, #3e4a72, #232b3f, #61497e, #5c5376, #595e8c, #536594, #3e4a72, #232b3f, #61497e, #5c5376, #595e8c, #536594, #3e4a72, #232b3f, #61497e, #5c5376, #595e8c, #536594);
   background-size: 300% 300%;
   animation-name: mood;
   animation-duration: 10s;
   animation-iteration-count: infinite;
-  animation-timing-function: linear; 
+  animation-timing-function: linear;
 }
-  
+
 @keyframes mood {
   0% {
     background-position: top 0 left 0;
-  } 
+  }
 
   100% {
-    background-position:  bottom 0 right 0;
+    background-position: bottom 0 right 0;
   }
 }
 
@@ -220,14 +230,14 @@ nav { grid-area: nav; }
   font-style: italic;
   font-size: 20px;
   color: #a4b6c3;
-} 
+}
 
 .biophoto {
   float: left;
   clip-path: circle(50%);
   shape-outside: circle(50%);
   margin-right: 20px;
-  margin-top: 20px; 
+  margin-top: 20px;
 }
 
 /* Projects page */
@@ -236,38 +246,69 @@ nav { grid-area: nav; }
   grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto;
   grid-template-columns: minmax(48.75px, auto) 3fr 3fr 3fr 3fr minmax(48.75px, auto);
   grid-template-areas: "nav nav nav nav nav nav"
-                       "projectheading projectheading projectheading projectheading projectheading projectheading"
-                       ". projectone projectone projectone projectone ."
-                       ". projecttwo projecttwo projecttwo projecttwo ."
-                       ". projectthree projectthree projectthree projectthree ."
-                       ". projectfour projectfour projectfour projectfour .";
+    "projectheading projectheading projectheading projectheading projectheading projectheading"
+    ". projectone projectone projectone projectone ."
+    ". projecttwo projecttwo projecttwo projecttwo ."
+    ". projectthree projectthree projectthree projectthree ."
+    ". projectfour projectfour projectfour projectfour .";
   column-gap: 1em;
   row-gap: 3em;
 }
 
-nav { grid-area: nav; }
-#projectheading { grid-area: projectheading; }
-#projectone  { grid-area: projectone; }
-#projecttwo  { grid-area: projecttwo; }
-#projectthree  { grid-area: projectthree; }
-#projectfour  { grid-area: projectfour; }
+nav {
+  grid-area: nav;
+}
 
-#projectone, #projecttwo, #projectthree, #projectfour {
+#projectheading {
+  grid-area: projectheading;
+}
+
+#projectone {
+  grid-area: projectone;
+}
+
+#projecttwo {
+  grid-area: projecttwo;
+}
+
+#projectthree {
+  grid-area: projectthree;
+}
+
+#projectfour {
+  grid-area: projectfour;
+}
+
+#projectone,
+#projecttwo,
+#projectthree,
+#projectfour {
   display: grid;
   grid-template-rows: minmax(70px, 53px) auto auto minmax(48px, 70px);
   grid-template-columns: 1fr 3fr 3fr 1fr;
   grid-template-areas: "title title title title"
-                       "screenshot screenshot screenshot screenshot"
-                       ". description description ."
-                       "cardfooter cardfooter cardfooter cardfooter";                    
+    "screenshot screenshot screenshot screenshot"
+    ". description description ."
+    "cardfooter cardfooter cardfooter cardfooter";
   column-gap: 1em;
-  row-gap: 1em;                     
+  row-gap: 1em;
 }
 
-.title { grid-area: title; }
-.screenshot { grid-area: screenshot; }
-.description { grid-area: description; }
-.cardfooter { grid-area: cardfooter; }
+.title {
+  grid-area: title;
+}
+
+.screenshot {
+  grid-area: screenshot;
+}
+
+.description {
+  grid-area: description;
+}
+
+.cardfooter {
+  grid-area: cardfooter;
+}
 
 .projectcard {
   border-width: 1px;
@@ -278,7 +319,7 @@ nav { grid-area: nav; }
   text-align: center;
   margin-bottom: 25px;
   z-index: 100;
-  position: relative; 
+  position: relative;
 }
 
 .title {
@@ -290,11 +331,11 @@ nav { grid-area: nav; }
 }
 
 .screenshot {
-  width: 100%;  
+  width: 100%;
   height: auto;
   border-width: 3px;
   border-style: outset;
-  border-color: #232b3f; 
+  border-color: #232b3f;
 }
 
 .description {
@@ -306,20 +347,27 @@ nav { grid-area: nav; }
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-areas: "gridlive gridlive gridcode gridcode";                      
+  grid-template-areas: "gridlive gridlive gridcode gridcode";
 }
 
 /* Links on project cards styled to look like buttons */
-.gridlive { grid-area: gridlive; }
-.gridcode { grid-area: gridcode; }
+.gridlive {
+  grid-area: gridlive;
+}
 
-.gridlive, .gridcode {
+.gridcode {
+  grid-area: gridcode;
+}
+
+.gridlive,
+.gridcode {
   display: flex;
   justify-content: center;
   text-decoration: none;
 }
 
-.live, .disabled {
+.live,
+.disabled {
   background-color: #e7e482;
   font-size: 12px;
   border-radius: 10%;
@@ -340,7 +388,7 @@ nav { grid-area: nav; }
   opacity: 0.3;
   cursor: not-allowed;
 }
- 
+
 .code {
   background-color: #e7e482;
   font-size: 12px;
@@ -358,25 +406,25 @@ nav { grid-area: nav; }
   color: white;
 }
 
-.code > .icon-default {
+.code>.icon-default {
   display: block;
-  padding-left: 32px;  
+  padding-left: 32px;
 }
 
-.code:hover > .icon-default {
-  display: none;  
+.code:hover>.icon-default {
+  display: none;
 }
 
-.code > .icon-hover {
+.code>.icon-hover {
   display: none
 }
 
-.code:hover > .icon-hover {
+.code:hover>.icon-hover {
   display: block;
   color: white;
   background-color: #232b3f;
   padding-left: 32px;
-} 
+}
 
 /* Contact page */
 #contactme {
@@ -384,25 +432,39 @@ nav { grid-area: nav; }
   grid-template-rows: minmax(75px, 75px) minmax(75px, auto) min-content auto auto;
   grid-template-columns: minmax(48.75px, auto) 3fr 3fr 3fr 3fr minmax(48.75px, auto);
   grid-template-areas: "nav nav nav nav nav nav"
-                       "contactheading contactheading contactheading contactheading contactheading contactheading"
-                       ". connectinvite connectinvite connectinvite connectinvite ."
-                       ". contactform contactform contactform contactform ."
-                       "footer footer footer footer footer footer";
+    "contactheading contactheading contactheading contactheading contactheading contactheading"
+    ". connectinvite connectinvite connectinvite connectinvite ."
+    ". contactform contactform contactform contactform ."
+    "footer footer footer footer footer footer";
   column-gap: 1em;
-  row-gap: 3em;  
+  row-gap: 3em;
 }
 
-nav { grid-area: nav; }
-#contactheading { grid-area: contactheading; }
-#connectinvite  { grid-area: connectinvite; }
-#contactform { grid-area: contactform; }
-#footer { grid-area: footer }
+nav {
+  grid-area: nav;
+}
+
+#contactheading {
+  grid-area: contactheading;
+}
+
+#connectinvite {
+  grid-area: connectinvite;
+}
+
+#contactform {
+  grid-area: contactform;
+}
+
+#footer {
+  grid-area: footer
+}
 
 #letschat {
   text-align: center;
   font-style: italic;
 }
-    
+
 #connectinvite {
   font-size: 16px;
   color: #e0e0e0;
@@ -423,14 +485,15 @@ nav { grid-area: nav; }
 
 label {
   float: left;
-  color: #e0e0e0; 
-} 
+  color: #e0e0e0;
+}
 
-input[type="text"], input[type="email"] { 
+input[type="text"],
+input[type="email"] {
   width: 100%;
   background-color: #536594;
   border-radius: 8px;
-  outline:1px solid;
+  outline: 1px solid;
   margin-bottom: 5px;
 }
 
@@ -444,12 +507,13 @@ textarea {
   resize: none;
   background-color: #536594;
   border-radius: 8px;
-  outline: 1px solid;  
+  outline: 1px solid;
 }
 
 ::placeholder {
   color: black;
-  opacity: 1; /* Firefox */
+  opacity: 1;
+  /* Firefox */
 }
 
 textarea:focus {
@@ -463,14 +527,14 @@ textarea:focus {
   text-align: center;
   float: right;
   border-radius: 8px;
-  outline:1px solid;
+  outline: 1px solid;
   margin-top: 1em;
   margin-bottom: 0;
   padding: 5px;
   width: 100%;
   border: 1px solid #e7e482;
 }
-  
+
 #submit:hover {
   background-color: #232b3f;
   color: white;
@@ -479,18 +543,19 @@ textarea:focus {
 
 #footer {
   text-align: center;
-  background-color: #232b3f ;
+  background-color: #232b3f;
   color: #e0e0e0;
   outline-style: solid;
-  outline-color:#e7e482;
+  outline-color: #e7e482;
   outline-width: 1px;
   padding: 2em;
   margin-top: auto;
-  font-size: 14px;  
+  font-size: 14px;
 }
 
 /*  Media Queries */
-@media screen and (width <= 395px) {
+@media screen and (max-width: 395px) {
+
   /* center photo on small screens */
   .biophoto {
     display: block;
@@ -506,7 +571,7 @@ textarea:focus {
   }
 }
 
-@media screen and (width >= 600px) {
+@media screen and (min-width: 600px) {
   nav {
     font-size: 15px;
     display: block;
@@ -528,7 +593,7 @@ textarea:focus {
   nav li {
     float: left;
     padding: 0;
-    border-bottom: 0 solid #cccccc; 
+    border-bottom: 0 solid #cccccc;
   }
 
   nav a {
@@ -546,8 +611,8 @@ textarea:focus {
   }
 
   .active {
-    background-color: #e7e482; 
-    color: #232B3F; 
+    background-color: #e7e482;
+    color: #232B3F;
     border-radius: 10px;
   }
 
@@ -575,8 +640,8 @@ textarea:focus {
     grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) min-content;
     grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr;
     grid-template-areas: "nav nav nav nav nav nav"
-                         "aboutme aboutme aboutme aboutme aboutme aboutme"
-                         ". . bio bio . .";
+      "aboutme aboutme aboutme aboutme aboutme aboutme"
+      ". . bio bio . .";
   }
 
   #project {
@@ -584,10 +649,10 @@ textarea:focus {
     grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto;
     grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
     grid-template-areas: "nav nav nav nav nav nav"
-                         "projectheading projectheading projectheading projectheading projectheading projectheading"
-                         " . projectone projectone projecttwo projecttwo . "
-                         " . projectthree projectthree projectfour projectfour . ";
-    column-gap: 1em;                      
+      "projectheading projectheading projectheading projectheading projectheading projectheading"
+      " . projectone projectone projecttwo projecttwo . "
+      " . projectthree projectthree projectfour projectfour . ";
+    column-gap: 1em;
   }
 
   #connecttext {
@@ -603,16 +668,16 @@ textarea:focus {
   }
 }
 
-@media only screen and (width >= 768px) {
+@media only screen and (min-width: 768px) {
   #index {
     display: grid;
     grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) min-content;
     grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr;
     grid-template-areas: "nav nav nav nav nav nav"
-                         "aboutme aboutme aboutme aboutme aboutme aboutme"
-                         ". . bio bio . .";
-    row-gap:3em;
-    column-gap: 3em;                       
+      "aboutme aboutme aboutme aboutme aboutme aboutme"
+      ". . bio bio . .";
+    row-gap: 3em;
+    column-gap: 3em;
   }
 
   #project {
@@ -620,35 +685,35 @@ textarea:focus {
     grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto;
     grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
     grid-template-areas: "nav nav nav nav nav nav"
-                         "projectheading projectheading projectheading projectheading projectheading projectheading"
-                         " . projectone projectone projecttwo projecttwo . "
-                         " . projectthree projectthree projectfour projectfour . ";
-    column-gap: 3em;                  
+      "projectheading projectheading projectheading projectheading projectheading projectheading"
+      " . projectone projectone projecttwo projecttwo . "
+      " . projectthree projectthree projectfour projectfour . ";
+    column-gap: 3em;
   }
 
   #contactme {
     grid-template-rows: minmax(auto, 75px) minmax(auto, 60px) auto auto minmax(90px, auto);
     grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
     grid-template-areas: "nav nav nav nav nav nav"
-                         "contactheading contactheading contactheading contactheading contactheading contactheading"
-                         ". connectinvite connectinvite connectinvite connectinvite ."
-                         ". contactform contactform contactform contactform ."
-                         "footer footer footer footer footer footer";
+      "contactheading contactheading contactheading contactheading contactheading contactheading"
+      ". connectinvite connectinvite connectinvite connectinvite ."
+      ". contactform contactform contactform contactform ."
+      "footer footer footer footer footer footer";
     column-gap: 3em;
     row-gap: 3em;
   }
 }
 
-@media only screen and (width >=  992px) {
+@media only screen and (min-width: 992px) {
   #index {
     display: grid;
     grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) min-content;
     grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr;
     grid-template-areas: "nav nav nav nav nav nav"
-                         "aboutme aboutme aboutme aboutme aboutme aboutme"
-                         ". . bio bio . .";
-    row-gap:3em;
-    column-gap: 3em;                     
+      "aboutme aboutme aboutme aboutme aboutme aboutme"
+      ". . bio bio . .";
+    row-gap: 3em;
+    column-gap: 3em;
   }
 
   #project {
@@ -656,47 +721,46 @@ textarea:focus {
     grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto;
     grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
     grid-template-areas: "nav nav nav nav nav nav"
-                         "projectheading projectheading projectheading projectheading projectheading projectheading"
-                         " . projectone projectone projecttwo projecttwo . "
-                         " . projectthree projectthree projectfour projectfour . ";
+      "projectheading projectheading projectheading projectheading projectheading projectheading"
+      " . projectone projectone projecttwo projecttwo . "
+      " . projectthree projectthree projectfour projectfour . ";
     column-gap: 3em;
-  } 
+  }
 
   #contactme {
     display: grid;
-    grid-template-rows: minmax(auto, 75px) minmax(auto, 60px) auto minmax(90px, auto); 
+    grid-template-rows: minmax(auto, 75px) minmax(auto, 60px) auto minmax(90px, auto);
     grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
     grid-template-areas: "nav nav nav nav nav nav"
-                         "contactheading contactheading contactheading contactheading contactheading contactheading"
-                         ". connectinvite connectinvite contactform contactform ."
-                         "footer footer footer footer footer footer";
-    row-gap:3em;
+      "contactheading contactheading contactheading contactheading contactheading contactheading"
+      ". connectinvite connectinvite contactform contactform ."
+      "footer footer footer footer footer footer";
+    row-gap: 3em;
     column-gap: 3em;
   }
 }
 
-@media only screen and (width >=  1220px) {
+@media only screen and (min-width: 1220px) {
   #project {
     display: grid;
     grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto;
     grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
     grid-template-areas: "nav nav nav nav nav nav"
-                         "projectheading projectheading projectheading projectheading projectheading projectheading"
-                         " . projectone projecttwo projectthree projectfour . ";
-    row-gap:3em;
+      "projectheading projectheading projectheading projectheading projectheading projectheading"
+      " . projectone projecttwo projectthree projectfour . ";
+    row-gap: 3em;
     column-gap: 3em;
   }
 
   #contactme {
     display: grid;
-    grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto minmax(90px, auto); 
+    grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto minmax(90px, auto);
     grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
     grid-template-areas: "nav nav nav nav nav nav"
-                         "contactheading contactheading contactheading contactheading contactheading contactheading"
-                         ". connectinvite connectinvite contactform contactform ."
-                         "footer footer footer footer footer footer";
-    row-gap:3em;                    
-    column-gap: 3em;   
-  }  
+      "contactheading contactheading contactheading contactheading contactheading contactheading"
+      ". connectinvite connectinvite contactform contactform ."
+      "footer footer footer footer footer footer";
+    row-gap: 3em;
+    column-gap: 3em;
+  }
 }
- 
