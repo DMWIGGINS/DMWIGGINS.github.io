@@ -554,7 +554,7 @@ textarea:focus {
 }
 
 /*  Media Queries */
-@media screen and (max-width: 395px) {
+@media screen and (max-width: 431px) {
 
   /* center photo on small screens */
   .biophoto {
@@ -566,7 +566,6 @@ textarea:focus {
   }
 
   #intro {
-    text-align: justify;
     font-size: 18px;
   }
 }
