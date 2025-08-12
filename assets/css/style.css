@@ -463,6 +463,7 @@ nav {
 #letschat {
   text-align: center;
   font-style: italic;
+  color: #a4b6c3;
 }
 
 #connectinvite {
@@ -470,8 +471,7 @@ nav {
   color: #e0e0e0;
 }
 
-#connecttext {
-  /* background-color: rgba(97, 73, 126, 0.5); */
+.connecttext {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -635,15 +635,6 @@ textarea:focus {
     display: block;
   }
 
-  #index {
-    display: grid;
-    grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) min-content;
-    grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr;
-    grid-template-areas: "nav nav nav nav nav nav"
-      "aboutme aboutme aboutme aboutme aboutme aboutme"
-      ". . bio bio . .";
-  }
-
   #project {
     display: grid;
     grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto;
@@ -655,7 +646,7 @@ textarea:focus {
     column-gap: 1em;
   }
 
-  #connecttext {
+  .connecttext {
     background-color: transparent;
   }
 
@@ -675,7 +666,7 @@ textarea:focus {
     grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr;
     grid-template-areas: "nav nav nav nav nav nav"
       "aboutme aboutme aboutme aboutme aboutme aboutme"
-      ". . bio bio . .";
+      ". bio bio bio bio .";
     row-gap: 3em;
     column-gap: 3em;
   }
@@ -741,13 +732,26 @@ textarea:focus {
 }
 
 @media only screen and (min-width: 1220px) {
+
+  #index {
+    display: grid;
+    grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) min-content;
+    grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr;
+    grid-template-areas: "nav nav nav nav nav nav"
+      "aboutme aboutme aboutme aboutme aboutme aboutme"
+      ". . bio bio . .";
+    row-gap: 3em;
+    column-gap: 3em;
+  }
+
   #project {
     display: grid;
     grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto;
     grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
     grid-template-areas: "nav nav nav nav nav nav"
       "projectheading projectheading projectheading projectheading projectheading projectheading"
-      " . projectone projecttwo projectthree projectfour . ";
+     " . projectone projectone projecttwo projecttwo . "
+      " . projectthree projectthree projectfour projectfour . ";
     row-gap: 3em;
     column-gap: 3em;
   }
@@ -764,3 +768,18 @@ textarea:focus {
     column-gap: 3em;
   }
 }
+
+@media only screen and (min-width: 1450px) {
+
+  #project {
+    display: grid;
+    grid-template-rows: minmax(auto, 75px) minmax(auto, 75px) auto;
+    grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
+    grid-template-areas: "nav nav nav nav nav nav"
+      "projectheading projectheading projectheading projectheading projectheading projectheading"
+      " . projectone projecttwo projectthree projectfour . ";
+
+    column-gap: 3em;
+  }
+
+  }
