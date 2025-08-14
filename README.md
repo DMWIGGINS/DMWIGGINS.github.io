@@ -10,8 +10,8 @@ Junior Developer with a BA in Mathematics and a UNH Full Stack Developer Bootcam
 - HTML
 - CSS
 - Bootstrap
-- Javascript
-- JQuery
+- JavaScript
+- jQuery
 - GitHub
 - Node.js
 - MySql
